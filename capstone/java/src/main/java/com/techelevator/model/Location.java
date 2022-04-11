@@ -22,10 +22,14 @@ public class Location {
     private String saturdayHourOpen;
     private String saturdayHourClosed;
     private String socialMedia;
-    private List<String> categories;
+    private String categories;
 
 
-    public Location(Long locationId, String name, String description, String sundayHourOpen, String sundayHourClosed, String mondayHourOpen, String mondayHourClosed, String tuesdayHourOpen, String tuesdayHourClosed, String wednesdayHourOpen, String wednesdayHourClosed, String thursdayHourOpen, String thursdayHourClosed, String fridayHourOpen, String fridayHourClosed, String saturdayHourOpen, String saturdayHourClosed, String socialMedia, List<String> categories) {
+    public Location(Long locationId, String name, String description, String sundayHourOpen, String sundayHourClosed,
+                    String mondayHourOpen, String mondayHourClosed, String tuesdayHourOpen, String tuesdayHourClosed,
+                    String wednesdayHourOpen, String wednesdayHourClosed, String thursdayHourOpen, String thursdayHourClosed,
+                    String fridayHourOpen, String fridayHourClosed, String saturdayHourOpen, String saturdayHourClosed,
+                    String socialMedia, String categories) {
         this.locationId = locationId;
         this.name = name;
         this.description = description;
@@ -196,11 +200,11 @@ public class Location {
         this.socialMedia = socialMedia;
     }
 
-    public List<String> getCategories() {
+    public String getCategories() {
         return categories;
     }
 
-    public void setCategories(List<String> categories) {
+    public void setCategories(String categories) {
         this.categories = categories;
     }
 }

@@ -8,11 +8,11 @@ public interface LocationDao {
     List<Location> getAllLocations();
     Location getLocationById(Long locationId);
     List<Location> getLocationByKeyword(String keyword);
-    List<Location>  getLocationByTime (String time);
+    List<Location>  getLocationByTime (String time, String Day);
     List<Location>  getLocationByCategory (String category);
-    boolean createLocation (String username , String description , String sundayHourOpen , String sundayHourClosed , String mondayHourOpen , String mondayHourClosed , String tuesdayHourOpen
+    boolean createLocation (String name , String description , String sundayHourOpen , String sundayHourClosed , String mondayHourOpen , String mondayHourClosed , String tuesdayHourOpen
     , String tuesdayHourClosed , String wednesdayHourOpen , String wednesdayHourClosed , String thursdayHourOpen , String thursdayHourClosed , String fridayHourOpen , String fridayHourClosed ,
-    String saturdayHourOpen ,  String saturdayHourClosed , String socialMedia , List<String> categories );
+    String saturdayHourOpen ,  String saturdayHourClosed , String socialMedia , String categories );
 
 
 
