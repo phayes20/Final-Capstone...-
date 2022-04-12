@@ -23,9 +23,6 @@ public class JdbcLocationDao implements LocationDao {
     }
 
 
-
-
-
     @Override
     public List<Location> getAllLocations() {
         List<Location> locations = new ArrayList<>();
