@@ -83,24 +83,56 @@ public class JdbcLocationDao implements LocationDao {
         return null;
     }
 
+//Commented out to transition to method that takes object instead.
+//    @Override
+//    public boolean createLocation (String name, String description, String sundayHourOpen, String sundayHourClosed,
+//                            String mondayHourOpen , String mondayHourClosed, String tuesdayHourOpen,
+//                            String tuesdayHourClosed, String wednesdayHourOpen, String wednesdayHourClosed,
+//                            String thursdayHourOpen, String thursdayHourClosed, String fridayHourOpen, String fridayHourClosed,
+//                            String saturdayHourOpen,  String saturdayHourClosed, String socialMedia, String categories) {
+//
+//        // create location
+//        String insertLocation = "insert into locations (categories, description, sunday_hour_open, sunday_hour_closed, monday_hour_open, monday_hour_closed, tuesday_hour_open, tuesday_hour_closed, wednesday_hour_open, wednesday_hour_closed, thursday_hour_open, thursday_hour_closed, friday_hour_open, friday_hour_closed, saturday_hour_open, saturday_hour_closed, social_media, name) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+//
+//        try {
+//            jdbcTemplate.queryForObject(insertLocation, Integer.class, description, sundayHourOpen, sundayHourClosed, mondayHourOpen, mondayHourClosed, tuesdayHourOpen, tuesdayHourClosed, wednesdayHourOpen, wednesdayHourClosed, thursdayHourOpen, thursdayHourClosed, fridayHourOpen, fridayHourClosed, saturdayHourOpen, saturdayHourClosed, socialMedia, name);
+//        } catch (DataAccessException e) {
+//            return false;
+//        }
+//        return true;
+//    }
 
     @Override
-    public boolean createLocation (String name, String description, String sundayHourOpen, String sundayHourClosed,
-                            String mondayHourOpen , String mondayHourClosed, String tuesdayHourOpen,
-                            String tuesdayHourClosed, String wednesdayHourOpen, String wednesdayHourClosed,
-                            String thursdayHourOpen, String thursdayHourClosed, String fridayHourOpen, String fridayHourClosed,
-                            String saturdayHourOpen,  String saturdayHourClosed, String socialMedia, String categories) {
+    public boolean createLocation (Location location) {
+       String name=  location.getName();
+        String description = location.getDescription();
+        String sundayHourOpen= location.getSundayHourOpen();
+        String sundayHourClosed = location.getSundayHourClosed();
+        String mondayHourOpen = location.getMondayHourOpen();
+        String mondayHourClosed= location.getMondayHourClosed();
+        String tuesdayHourOpen = location.getTuesdayHourOpen();
+        String tuesdayHourClosed= location.getTuesdayHourClosed();
+        String wednesdayHourOpen= location.getWednesdayHourOpen();
+        String wednesdayHourClosed= location.getWednesdayHourClosed();
+        String thursdayHourOpen= location.getThursdayHourOpen();
+        String thursdayHourClosed = location.getThursdayHourClosed();
+        String fridayHourOpen = location.getFridayHourOpen();
+        String fridayHourClosed = location.getFridayHourClosed();
+        String saturdayHourOpen = location.getSaturdayHourOpen();
+        String saturdayHourClosed= location.getSaturdayHourClosed();
+        String socialMedia = location.getSocialMedia();
+        String categories = location.getCategories();
 
-        // create location
         String insertLocation = "insert into locations (categories, description, sunday_hour_open, sunday_hour_closed, monday_hour_open, monday_hour_closed, tuesday_hour_open, tuesday_hour_closed, wednesday_hour_open, wednesday_hour_closed, thursday_hour_open, thursday_hour_closed, friday_hour_open, friday_hour_closed, saturday_hour_open, saturday_hour_closed, social_media, name) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 
         try {
-            jdbcTemplate.queryForObject(insertLocation, Integer.class, description, sundayHourOpen, sundayHourClosed, mondayHourOpen, mondayHourClosed, tuesdayHourOpen, tuesdayHourClosed, wednesdayHourOpen, wednesdayHourClosed, thursdayHourOpen, thursdayHourClosed, fridayHourOpen, fridayHourClosed, saturdayHourOpen, saturdayHourClosed, socialMedia, name);
+            jdbcTemplate.queryForObject(insertLocation, String.class, categories, description, sundayHourOpen, sundayHourClosed, mondayHourOpen, mondayHourClosed, tuesdayHourOpen, tuesdayHourClosed, wednesdayHourOpen, wednesdayHourClosed, thursdayHourOpen, thursdayHourClosed, fridayHourOpen, fridayHourClosed, saturdayHourOpen, saturdayHourClosed, socialMedia, name);
         } catch (DataAccessException e) {
             return false;
         }
         return true;
     }
+
 
 
     private Location mapRowToLocations(SqlRowSet rs) {
