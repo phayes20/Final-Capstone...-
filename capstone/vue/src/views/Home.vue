@@ -3,33 +3,27 @@
     <h1>Home</h1>
     <p>WalkCLE</p>
     <!-- <img src="src\img\skyline.jpg" alt="Cleveland Skyline"> -->
+    <Nav-Bar />
     
-    <aside>
-        <nav>
-            <ul>
-                <li><a href="#">Bars / Food</a></li>
-                <li><a href="#">Sports</a></li>
-                <li><a href="#">PlayHouse District</a></li>
-                <li><a href="#">Arts</a></li>
-                <li><a href="#">Parks</a></li>
-                <li><a href="#">Historical Sites</a></li>
-            </ul>
-        </nav>
-    </aside>
-  
-
-
-
 
   </div>
 </template>
 
-<script>
-export default {
-  name: "home"
-};
-</script>
 
+
+<script>
+
+import NavBar  from '@/components/NavBar';
+
+export default {
+  name: "home",
+  components:{NavBar},
+};
+
+
+
+
+</script>
 
 
 <link rel="stylesheet" href="style.css">
