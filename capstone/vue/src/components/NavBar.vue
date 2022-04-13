@@ -69,36 +69,6 @@ ul {
     
 }
 
-
-
-<!-- @media only screen and (max-width: 800px) {
-    body {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-        "header"
-        "main"
-        "Popsicle-Race"
-        "Store"
-        "footer"
-        ;
-        height: 100vh;
-        gap: 20px; -->
-
-        
-    <!-- } -->
-
-    
-}
-
-
-
-
-
-
-
-
-
   </style>
   
   

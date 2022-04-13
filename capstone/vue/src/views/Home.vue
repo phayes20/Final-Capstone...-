@@ -4,6 +4,7 @@
     <p>WalkCLE</p>
     <!-- <img src="src\img\skyline.jpg" alt="Cleveland Skyline"> -->
     <Nav-Bar />
+    <Search />
     
 
   </div>
@@ -14,10 +15,11 @@
 <script>
 
 import NavBar  from '@/components/NavBar';
+import Search from '@/components/Search'
 
 export default {
   name: "home",
-  components:{NavBar},
+  components:{NavBar, Search},
 };
 
 
