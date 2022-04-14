@@ -12,6 +12,10 @@ import java.util.List;
 @RequestMapping("/location")
 public class LocationController {
 
+    public LocationController(LocationDao locationDao) {
+        this.locationDao = locationDao;
+    }
+
     private LocationDao locationDao;
 
 //    @TODO might need to change list to a wrapper class
