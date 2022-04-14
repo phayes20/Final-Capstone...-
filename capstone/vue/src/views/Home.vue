@@ -5,6 +5,7 @@
     <!-- <img src="src\img\skyline.jpg" alt="Cleveland Skyline"> -->
     <Nav-Bar />
     <Search />
+    <add-google-map />
     
 
   </div>
@@ -15,11 +16,12 @@
 <script>
 
 import NavBar  from '@/components/NavBar';
-import Search from '@/components/Search'
+import Search from '@/components/Search';
+import AddGoogleMap from '@/components/AddGoogleMap';
 
 export default {
   name: "home",
-  components:{NavBar, Search},
+  components:{NavBar, Search, AddGoogleMap},
 };
 
 
