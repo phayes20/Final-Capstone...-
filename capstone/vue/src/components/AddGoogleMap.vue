@@ -10,7 +10,10 @@
  
     </div>
     <br>
-    <gmap-map
+    <iframe width="650" height="450" frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBMDfZgTl5P9-Xya4ZmsWL3jYCqnCwjw0o&q=Cleveland,Ohio" allowfullscreen>
+</iframe> 
+    <!-- <gmap-map
         :zoom="14"    
         :center="center"
         style="width:100%;  height: 600px;"
@@ -21,7 +24,7 @@
         :position="m.position"
         @click="center=m.position"
       ></gmap-marker>
-    </gmap-map>
+    </gmap-map> -->
   </div>
 </template>
  
