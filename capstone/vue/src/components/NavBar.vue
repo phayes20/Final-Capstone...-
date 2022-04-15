@@ -4,7 +4,7 @@
     <aside>
         <nav>
             <ul>
-                <li id= "Food"><a href="#">Bars / Food</a></li>
+                <li id= "Food" v-on:click="LocationList.filter.category = 'food' ">Bars / Food</li>
                 <li id= "Sports"><a href="#">Sports</a></li>
                 <li id= "Theater"><a href="#">PlayHouse District</a></li>
                 <li id= "Arts"><a href="#">Arts</a></li>

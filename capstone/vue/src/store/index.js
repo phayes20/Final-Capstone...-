@@ -63,7 +63,7 @@ export default new Vuex.Store({
       state.user = {};
       axios.defaults.headers.common = {};
     },
-    SET_LOCATION_PREVIEWS(state, data) {
+    SET_LOCATIONS(state, data) {
       state.locations = data;
 
     }
