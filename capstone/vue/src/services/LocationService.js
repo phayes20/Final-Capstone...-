@@ -13,5 +13,5 @@ export default {
     getLocation(locationID){
         return axios.get(`/location/${locationID}`)
     },
-    
+   
 }

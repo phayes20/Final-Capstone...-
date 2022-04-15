@@ -34,15 +34,15 @@ export default {
     computed:{
         filteredList(){
         let filteredLocations = this.$store.state.locations;
-         if(this.filter.keyword != "" ){
+         if(this.$store.state.locationFilter.keyword != "" ){
             filteredLocations = filteredLocations.filter(location => 
-                location.name.includes(this.filter.keyword) || location.description.includes(this.filter.keyword))
-         } if(this.filter.category != "" ){
+                location.name.includes(this.$store.state.locationFilter.keyword) || location.description.includes(this.$store.state.locationFilter))
+         } if(this.$store.state.locationFilter.category != "" ){
             filteredLocations = filteredLocations.filter(location => 
-                location.category.includes(this.filter.category))
-        } if(this.filter.time != "") {
+                location.category = this.$store.state.locationFilter.category)
+        } if(this.$store.state.locationFilter.time != "") {
             filteredLocations = filteredLocations.filter(location => 
-                location.time.includes(this.filter.category))
+                location.time.includes(this.$store.state.locationFilter.time))
         }
         return filteredLocations;
     }
