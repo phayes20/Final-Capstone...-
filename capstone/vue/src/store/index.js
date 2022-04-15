@@ -21,6 +21,11 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {},
     locations: [],
+    locationFilter: {
+      keyword: '',
+      category: '',
+      time: '',
+  },
     location: {
       locationId: '',
       name: '',
@@ -66,6 +71,15 @@ export default new Vuex.Store({
     SET_LOCATIONS(state, data) {
       state.locations = data;
 
+    },
+    SET_FILTER_KEYWORD(state, data) {
+      state.locationFilter.keyword = data;
+    },
+    SET_FILTER_CATEGORY(state, data) {
+      state.locationFilter.category = data;
+    },
+    SET_FILTER_TIME(state, data) {
+      state.locationFilter.time = data;
     }
   }
 })

@@ -4,12 +4,12 @@
     <aside>
         <nav>
             <ul>
-                <li id= "Food" v-on:click="LocationList.filter.category = 'food' ">Bars / Food</li>
-                <li id= "Sports"><a href="#">Sports</a></li>
-                <li id= "Theater"><a href="#">PlayHouse District</a></li>
-                <li id= "Arts"><a href="#">Arts</a></li>
-                <li id= "Parks"><a href="#">Parks</a></li>
-                <li id= "Historical"><a href="#">Historical Sites</a></li>
+                <li id= "Food"> <a v-on:click="setFilterCategory('food') ">Bars / Food </a></li>
+                <li id= "Sports"><a v-on:click.prevent="setFilterCategory('sports')" href="#">Sports</a></li>
+                <li id= "Theater"><a v-on:click.prevent="setFilterCategory('theater')" href="#">PlayHouse District</a></li>
+                <li id= "Arts"><a v-on:click.prevent="setFilterCategory('arts')" href="#">Arts</a></li>
+                <li id= "Parks"><a v-on:click.prevent="setFilterCategory('parks')" href="#">Parks</a></li>
+                <li id= "Historical"><a v-on:click.prevent="setFilterCategory('historical')" href="#">Historical Sites</a></li>
             </ul>
         </nav>
     </aside>
@@ -20,8 +20,13 @@
   <script>
 
 export default {
-  name: "Nav-Bar"
-};
+  name: 'Nav-Bar',
+  methods: {
+    setFilterCategory(category){
+      this.$store.commit("SET_FILTER_CATEGORY", category)
+    }
+}
+}
 
 
 
