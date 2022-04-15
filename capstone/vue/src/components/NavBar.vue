@@ -32,43 +32,6 @@ export default {
 
   <style>
 
-
-#Food {
-    grid-area: Food;
-}
-
-#Sports {
-    grid-area: Sports;
-}
-
-#Theater {
-    grid-area: Theater;
-}
-
-#Arts {
-    grid-area: Arts;
-}
- #Parks {
-   grid-area: Parks;
- }
-
- #Historical {
-   grid-area: Historical;
- }
-
-
-ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-       "Food Sports Theater Arts Parks Historical "
-       ;
-    height: 100px;
-    gap: 20px;
-
-    
-}
-
   </style>
   
   
