@@ -7,11 +7,16 @@
     <Search />
     <add-google-map />
     <location-list />
-
+    <div id="background_photo">
+      <img alt="background" src="../img/night skyline.jpg">
+    </div>
+    <div id="food_photo">
+      <img alt="food" src="../img/food collage.jpeg">
+    </div>
   </div>
 </template>
 
-
+<!--relative path similar to line 24 -->
 
 <script>
 
@@ -31,5 +36,48 @@ export default {
 
 </script>
 
+<style>
 
-<link rel="stylesheet" href="style.css">
+#food_photo {
+  grid-area: Food_Img;
+}
+
+#Food {
+    grid-area: Food;
+}
+
+#Sports {
+    grid-area: Sports;
+}
+
+#Theater {
+    grid-area: Theater;
+}
+
+#Arts {
+    grid-area: Arts;
+}
+ #Parks {
+   grid-area: Parks;
+ }
+
+ #Historical {
+   grid-area: Historical;
+ }
+
+
+ul {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+       "Food Food_Img Sports Sports"
+       "Theater Theater Arts Arts"
+       "Parks Parks Historical Historical"
+       ;
+    height: 100px;
+    gap: 20px;
+
+    
+}
+</style>
