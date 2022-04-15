@@ -19,7 +19,37 @@ if(currentToken != null) {
 export default new Vuex.Store({
   state: {
     token: currentToken || '',
-    user: currentUser || {}
+    user: currentUser || {},
+    locations: [],
+    locationFilter: {
+      keyword: '',
+      category: '',
+      time: '',
+  },
+    location: {
+      locationId: '',
+      name: '',
+      description: '',
+      sundayHourOpen: '',
+      sundayHourClosed: '',
+      mondayHourOpen: '',
+      mondayHourClosed: '',
+      tuesdayHourOpen: '',
+      tuesdayHourClosed: '',
+      wednesdayHourOpen: '',
+      wednesdayHourClosed: '',
+      thursdayHourOpen: '',
+      thursdayHourClosed: '',
+      fridayHourOpen: '',
+      fridayHourClosed: '',
+      saturdayHourOpen: '',
+      saturdayHourClosed: '',
+      socialMedia: '',
+      categories: '',
+      latitude: '',
+      longitude: '',
+
+    }
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -37,6 +67,19 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
+    },
+    SET_LOCATIONS(state, data) {
+      state.locations = data;
+
+    },
+    SET_FILTER_KEYWORD(state, data) {
+      state.locationFilter.keyword = data;
+    },
+    SET_FILTER_CATEGORY(state, data) {
+      state.locationFilter.category = data;
+    },
+    SET_FILTER_TIME(state, data) {
+      state.locationFilter.time = data;
     }
   }
 })

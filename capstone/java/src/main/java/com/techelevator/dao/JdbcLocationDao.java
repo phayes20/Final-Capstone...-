@@ -55,7 +55,7 @@ public class JdbcLocationDao implements LocationDao {
                 " monday_hour_open, monday_hour_closed, tuesday_hour_open, \n" +
                 " tuesday_hour_closed, wednesday_hour_open, wednesday_hour_closed, \n" +
                 " thursday_hour_open, thursday_hour_closed, friday_hour_open, friday_hour_closed, \n" +
-                " saturday_hour_open,  saturday_hour_closed, social_media, category FROM locations\n" +
+                " saturday_hour_open,  saturday_hour_closed, social_media, category, latitude, longitude FROM locations\n" +
                 " WHERE name ILIKE  '%?%';";
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql, keyword);
         while (rowSet.next()) {
@@ -127,6 +127,8 @@ public class JdbcLocationDao implements LocationDao {
         String saturdayHourClosed= location.getSaturdayHourClosed();
         String socialMedia = location.getSocialMedia();
         String categories = location.getCategories();
+        double latitude = location.getLatitude();
+        double  longitude = location.getLongitude();
 
         String insertLocation = "insert into locations (categories, description, sunday_hour_open, sunday_hour_closed, monday_hour_open, monday_hour_closed, tuesday_hour_open, tuesday_hour_closed, wednesday_hour_open, wednesday_hour_closed, thursday_hour_open, thursday_hour_closed, friday_hour_open, friday_hour_closed, saturday_hour_open, saturday_hour_closed, social_media, name) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 
@@ -161,6 +163,8 @@ public class JdbcLocationDao implements LocationDao {
         location.setSaturdayHourClosed(rs.getString("saturday_hour_closed"));
         location.setSocialMedia(rs.getString("social_media"));
         location.setName(rs.getString("name"));
+        location.setLatitude(rs.getDouble("latitude"));
+        location.setLongitude(rs.getDouble("longitude"));
         return location;
     }
 }
