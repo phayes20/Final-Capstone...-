@@ -23,13 +23,15 @@ public class Location {
     private String saturdayHourClosed;
     private String socialMedia;
     private String categories;
+    private double latitude;
+    private double longitude;
 
 
     public Location(Long locationId, String name, String description, String sundayHourOpen, String sundayHourClosed,
                     String mondayHourOpen, String mondayHourClosed, String tuesdayHourOpen, String tuesdayHourClosed,
                     String wednesdayHourOpen, String wednesdayHourClosed, String thursdayHourOpen, String thursdayHourClosed,
                     String fridayHourOpen, String fridayHourClosed, String saturdayHourOpen, String saturdayHourClosed,
-                    String socialMedia, String categories) {
+                    String socialMedia, String categories, double latitude, double longitude) {
         this.locationId = locationId;
         this.name = name;
         this.description = description;
@@ -49,6 +51,8 @@ public class Location {
         this.saturdayHourClosed = saturdayHourClosed;
         this.socialMedia = socialMedia;
         this.categories = categories;
+        this.latitude = latitude;
+        this.longitude = longitude;
 
     }
 
@@ -202,6 +206,22 @@ public class Location {
 
     public String getCategories() {
         return categories;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     public void setCategories(String categories) {

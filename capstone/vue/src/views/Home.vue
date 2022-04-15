@@ -6,7 +6,7 @@
     <Nav-Bar />
     <Search />
     <add-google-map />
-    
+    <location-list />
 
   </div>
 </template>
@@ -19,9 +19,11 @@ import NavBar  from '@/components/NavBar';
 import Search from '@/components/Search';
 import AddGoogleMap from '@/components/AddGoogleMap';
 
+import LocationList from '../components/LocationList.vue';
+
 export default {
   name: "home",
-  components:{NavBar, Search, AddGoogleMap},
+  components:{NavBar, Search, AddGoogleMap, LocationList},
 };
 
 

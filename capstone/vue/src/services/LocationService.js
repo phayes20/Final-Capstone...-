@@ -9,6 +9,9 @@ export default {
 
     getLocations() {
         return http.get('/location');
-    }
-
+    },
+    getLocation(locationID){
+        return http.get(`location/${locationID}`)
+    },
+    
 }
