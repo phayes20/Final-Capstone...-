@@ -42,7 +42,7 @@ export default {
     list-style: none;
     width: 100%;
     height: 200px;
-    background-color:rgb(37, 176, 194);
+   background-image:url('../img/night skyline.jpg'); 
     border-radius: 1fr;
     text-align: auto; 
     line-height: 30px;
