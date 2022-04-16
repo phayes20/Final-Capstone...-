@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
-    <p>WalkCLE</p>
+    <!-- <h1>WalkCLE</h1> -->
+   <h1>WalkCLE</h1>
     <!-- <img src="src\img\skyline.jpg" alt="Cleveland Skyline"> -->
     <Nav-Bar />
     <Search />
@@ -38,7 +38,8 @@ export default {
 
 <style>
 
-#food_photo {
+ 
+/* #food_photo {
   grid-area: Food_Img;
 }
 
@@ -64,20 +65,27 @@ export default {
  #Historical {
    grid-area: Historical;
  }
+ */
 
-
-ul {
+ ul {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
     grid-template-areas:
        "Food Food_Img Sports Sports"
        "Theater Theater Arts Arts"
        "Parks Parks Historical Historical"
        ;
     height: 100px;
-    gap: 20px;
-
+    gap: 20px; 
     
-}
+ } 
 </style>
+
+
+// nav ul {background-image:url(skyline.jpg);
+//      background-attachment: fixed;
+//      background-position: center;
+//      background-repeat: no-repeat;background-size: cover;}
+ 
+
