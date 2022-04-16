@@ -39,7 +39,7 @@ export default {
                 location.name.includes(this.$store.state.locationFilter.keyword) || location.description.includes(this.$store.state.locationFilter))
          } if(this.$store.state.locationFilter.category != "" ){
             filteredLocations = filteredLocations.filter(location => 
-                location.category = this.$store.state.locationFilter.category)
+                location.category == this.$store.state.locationFilter.category)
         } if(this.$store.state.locationFilter.time != "") {
             filteredLocations = filteredLocations.filter(location => 
                 location.time.includes(this.$store.state.locationFilter.time))
