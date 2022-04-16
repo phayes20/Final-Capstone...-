@@ -45,7 +45,7 @@ export default new Vuex.Store({
       saturdayHourOpen: '',
       saturdayHourClosed: '',
       socialMedia: '',
-      categories: '',
+      category: '',
       latitude: '',
       longitude: '',
 
