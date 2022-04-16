@@ -45,13 +45,30 @@ export default
        },
        methods: {
            setTimeFilters() {
+               //reset other filter
+               this.clearKeywordFilter();
+               this.$store.commit("SET_FILTER_KEYWORD", this.filter.keyword);
+
                this.$store.commit("SET_FILTER_DAY", this.filter.day);
                this.$store.commit("SET_FILTER_TIME", this.filter.time);
            },
 
         setFilterKeyword(){
-      this.$store.commit("SET_FILTER_KEYWORD", this.filter.keyword)
+
+            //reset other filter
+        this.clearTimeFilter();
+        this.$store.commit("SET_FILTER_DAY", this.filter.day);
+        this.$store.commit("SET_FILTER_TIME", this.filter.time);
+      this.$store.commit("SET_FILTER_KEYWORD", this.filter.keyword);
+      
     },
+        clearTimeFilter(){
+            this.filter.time = "";
+            this.filter.day = "";
+        },
+        clearKeywordFilter() {
+            this.filter.keyword = "";
+        }
     // setKeyword(keyword){
     //     this.keyword = keyword;
     // }
