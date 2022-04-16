@@ -125,28 +125,32 @@ INSERT INTO locations (name, description, sunday_hour_open, sunday_hour_closed, 
 wednesday_hour_open, wednesday_hour_closed, thursday_hour_open, thursday_hour_closed, friday_hour_open, friday_hour_closed, saturday_hour_open, saturday_hour_closed,social_media, category, latitude, longitude) 
 values ('A Christmas Story House', 'test description', '10:00:00', '17:00:00', '10:00:00', '17:00:00','10:00:00', '17:00:00','10:00:00', '17:00:00','10:00:00', '17:00:00','10:00:00', '17:00:00','10:00:00', '17:00:00', 'www.achristmasstoryhouse.com', 'historical',  '41.4687', '-81.6874');
 
+COMMIT TRANSACTION;
 
 
+BEGIN TRANSACTION;
+DROP TABLE IF EXISTS user_location;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+CREATE TABLE user_location (
+   	user_id int NOT NULL,
+    location_id int NOT NULL,
+	time_stamp timestamp NOT NULL,
+	CONSTRAINT PK_user_location PRIMARY KEY(user_id, location_id),
+    CONSTRAINT FK_user_location_user FOREIGN KEY(user_id) REFERENCES users(user_id),
+    CONSTRAINT FK_user_location_location FOREIGN KEY(location_id) REFERENCES locations(location_id)
+);
 
 COMMIT TRANSACTION;
+
+
+
+
+
+
+
+
+
 
 
 
