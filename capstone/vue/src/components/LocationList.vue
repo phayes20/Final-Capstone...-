@@ -19,30 +19,55 @@ export default {
     
 
     name: 'location-list',
-    props: ['filteredLocations'],
+    // props: ['filteredLocations'],
     locations: [],
     filteredLocations: [],
-    data(){
-        return {
-            filter: {
-                keyword: '',
-                category: '',
-                time: '',
-            }
-        }
-    },
+    // data(){
+    //     return {
+    //         filter: {
+    //             keyword: '',
+    //             category: '',
+    //             time: '',
+    //         }
+    //     }
+    // },
     computed:{
         filteredList(){
         let filteredLocations = this.$store.state.locations;
+            
+
          if(this.$store.state.locationFilter.keyword != "" ){
             filteredLocations = filteredLocations.filter(location => 
-                location.name.includes(this.$store.state.locationFilter.keyword) || location.description.includes(this.$store.state.locationFilter))
+                location.name.toLowerCase().includes(this.$store.state.locationFilter.keyword.toLowerCase()) || location.description.toLowerCase().includes(this.$store.state.locationFilter.keyword.toLowerCase()))
          } if(this.$store.state.locationFilter.category != "" ){
             filteredLocations = filteredLocations.filter(location => 
                 location.category == this.$store.state.locationFilter.category)
         } if(this.$store.state.locationFilter.time != "") {
-            filteredLocations = filteredLocations.filter(location => 
-                location.time.includes(this.$store.state.locationFilter.time))
+                
+            if(this.$store.state.locationFilter.day == "Sunday") {
+                 filteredLocations = filteredLocations.filter(location => 
+                    (parseInt(location.sundayHourOpen) <= parseInt(this.$store.state.locationFilter.time) && parseInt(location.sundayHourClosed) > parseInt(this.$store.state.locationFilter.time)))
+             }if(this.$store.state.locationFilter.day == "Monday") {
+                 filteredLocations = filteredLocations.filter(location => 
+                    (parseInt(location.mondayHourOpen) <= parseInt(this.$store.state.locationFilter.time) && parseInt(location.mondayHourClosed) > parseInt(this.$store.state.locationFilter.time)))
+             }if(this.$store.state.locationFilter.day == "Tuesday") {
+                 filteredLocations = filteredLocations.filter(location => 
+                    (parseInt(location.tuesdayHourOpen) <= parseInt(this.$store.state.locationFilter.time) && parseInt(location.tuesdayHourClosed) > parseInt(this.$store.state.locationFilter.time)))
+             }if(this.$store.state.locationFilter.day == "Wednesday") {
+                 filteredLocations = filteredLocations.filter(location => 
+                    (parseInt(location.wednesdayHourOpen) <= parseInt(this.$store.state.locationFilter.time) && parseInt(location.wednesdayHourClosed) > parseInt(this.$store.state.locationFilter.time)))
+             }if(this.$store.state.locationFilter.day == "Thursday") {
+                 filteredLocations = filteredLocations.filter(location => 
+                    (parseInt(location.thursdayHourOpen) <= parseInt(this.$store.state.locationFilter.time) && parseInt(location.thursdayHourClosed) > parseInt(this.$store.state.locationFilter.time)))
+             }if(this.$store.state.locationFilter.day == "Friday") {
+                 filteredLocations = filteredLocations.filter(location => 
+                    (parseInt(location.fridayHourOpen) <= parseInt(this.$store.state.locationFilter.time) && parseInt(location.fridayHourClosed) > parseInt(this.$store.state.locationFilter.time)))
+             }if(this.$store.state.locationFilter.day == "Saturday") {
+                 filteredLocations = filteredLocations.filter(location => 
+                    (parseInt(location.saturdayHourOpen) <= parseInt(this.$store.state.locationFilter.time) && parseInt(location.saturdayHourClosed) > parseInt(this.$store.state.locationFilter.time)))
+             }
+           
+            
         }
         return filteredLocations;
     }

@@ -25,6 +25,7 @@ export default new Vuex.Store({
       keyword: '',
       category: '',
       time: '',
+      day: ''
   },
     location: {
       locationId: '',
@@ -80,6 +81,9 @@ export default new Vuex.Store({
     },
     SET_FILTER_TIME(state, data) {
       state.locationFilter.time = data;
+    },
+    SET_FILTER_DAY(state, data) {
+      state.locationFilter.day = data;
     }
   }
 })
