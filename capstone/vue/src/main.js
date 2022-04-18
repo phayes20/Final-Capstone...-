@@ -4,6 +4,7 @@ import router from './router/index'
 import store from './store/index'
 import axios from 'axios'
 import * as VueGoogleMaps from "vue2-google-maps" // Import package
+import "../src/assets/style.css"
 
 Vue.config.productionTip = false
 Vue.use(VueGoogleMaps, {

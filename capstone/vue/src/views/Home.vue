@@ -7,13 +7,28 @@
     <Search />
     <add-google-map />
     <location-list />
+     <div class= "container">
+       
     <div id="background_photo">
-      <img alt="background" src="../img/night skyline.jpg">
+     
+      <img alt="background" src="../img/Location_Images/Cleveland_Sign.png">
+
+
     </div>
+   
+   
     <div id="food_photo">
-      <img alt="food" src="../img/food collage.jpeg">
+    
+      <!-- <img alt="food" src="../img/food collage.jpeg"> -->
+    
     </div>
   </div>
+
+  </div>
+
+
+
+
 </template>
 
 <!--relative path similar to line 24 -->
@@ -38,7 +53,9 @@ export default {
 
 <style>
 
- 
+
+
+
 /* #food_photo {
   grid-area: Food_Img;
 }
