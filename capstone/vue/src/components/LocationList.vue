@@ -6,7 +6,8 @@
         v-on:click="viewLocationDetails(location.id)">
         <h2>   {{ location.name }} </h2>
         <p>  {{  location.description  }} </p>
-        <img :src="location.image" class="location-image" alt="Location Image" />
+        <img :src='require(`../img/Location_Images/${location.name}.png`)'>
+        <!-- <img src="../img/Location_Images/{{ location.name }}.png" class="location-image" alt="Location Image" /> -->
 
     </div>
     </div>
