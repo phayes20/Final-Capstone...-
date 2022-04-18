@@ -42,10 +42,14 @@ export default {
     list-style: none;
     width: 100%;
     height: 200px;
-   background-image:url('../img/night skyline.jpg'); 
+   
     border-radius: 1fr;
     text-align: auto; 
     line-height: 30px;
+
+}
+nav {
+  background-image:url('../img/Location_Images/Cleveland_Sign.png'); 
 }
 
  ul li {
@@ -61,10 +65,4 @@ export default {
 
   </style>
   
-  nav ul {background-image:url(skyline.jpg);
-//      background-attachment: fixed;
-//      background-position: center;
-//      background-repeat: no-repeat;background-size: cover;}
-// img src="images/data_portrait.png"
-//background-image:url('src/img/skyline.jpg');
-// <bg-image>#
+ 
