@@ -100,5 +100,56 @@ export default {
 </script>
 
 <style scoped>
-/* needs to be set up as flexbox */
+
+.preview {
+display:grid;
+grid-template-columns:1fr 2fr;
+grid-template-areas: 
+"image name"
+"image description";
+justify-content: center;
+align-content: center;
+
+}
+/* 
+.location-list :nth-child(even) {
+display:grid;
+grid-template-columns:1fr 1fr;
+grid-template-areas: 
+"image name"
+"image description";
+justify-content: center;
+align-content: center;
+}
+
+.location-list :nth-child(odd) {
+display:grid;
+grid-template-columns:1fr 1fr;
+grid-template-areas: 
+"name image"
+"description image";
+} */
+
+.preview {
+    border:solid black;
+}
+
+h2 {
+    grid-area: name;
+    justify-self: center;
+}
+p {
+   
+    grid-area: description;
+    justify-self: center;
+    text-align: center;
+    
+}
+img {
+    grid-area: image;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
 </style>

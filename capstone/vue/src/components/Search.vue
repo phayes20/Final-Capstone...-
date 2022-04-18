@@ -1,15 +1,16 @@
 <template>
     <div class="search">
-        <form>
-            <h4>Search by name/description:</h4>
-           <input type="text" id="keywordFilter" v-model="filter.keyword" />
-           <button v-on:click.prevent="setFilterKeyword" type="submit">Search</button>
+        <div class="keyword">
+        <form id="keyword-search">
+          <label for="keywordFilter"> Search by name/description:</label>
+            <input type="text" id="keywordFilter" v-model="filter.keyword" /> <button v-on:click.prevent="setFilterKeyword" type="submit">Search</button>
         </form>
+        </div>
 
-
-        <h4> Search by day/hour open: </h4>
+        <div class = "time">
+        
         <form id="time-search">
-            <label for="day">Day:</label>
+            <label for="day"> Search by day/hour open:</label> 
             <select id="day" v-model="filter.day">
                 <option value="Sunday">Sunday</option>
                 <option value="Monday">Monday</option>
@@ -18,13 +19,14 @@
                 <option value="Thursday">Thursday</option>
                 <option value="Friday">Friday</option>
                 <option value="Saturday">Saturday</option>
-            </select>
+            </select> 
                    
         
-        <input type="time" id="search-time" v-model="filter.time"/>
+        <input type="time" id="search-time" v-model="filter.time"/> 
         <button v-on:click.prevent="setTimeFilters" type="submit">Search</button>
         
         </form>
+        </div>
     </div>
 </template>
 
@@ -47,6 +49,7 @@ export default
            setTimeFilters() {
                //reset other filter
                this.clearKeywordFilter();
+               this.setFilterCategory("");
                this.$store.commit("SET_FILTER_KEYWORD", this.filter.keyword);
 
                this.$store.commit("SET_FILTER_DAY", this.filter.day);
@@ -57,6 +60,7 @@ export default
 
             //reset other filter
         this.clearTimeFilter();
+        this.setFilterCategory("");
         this.$store.commit("SET_FILTER_DAY", this.filter.day);
         this.$store.commit("SET_FILTER_TIME", this.filter.time);
       this.$store.commit("SET_FILTER_KEYWORD", this.filter.keyword);
@@ -68,14 +72,38 @@ export default
         },
         clearKeywordFilter() {
             this.filter.keyword = "";
-        }
-    // setKeyword(keyword){
-    //     this.keyword = keyword;
-    // }
+        },
+         setFilterCategory(category){
+      this.$store.commit("SET_FILTER_CATEGORY", category)
+    }
+    
     }
     }
 </script>
 
 <style scoped>
+.search{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-areas: 
+    "keyword time";
 
+    margin-bottom: 10px;
+    height: 70px;
+    justify-content: center;
+    align-content: center;
+    gap: -500px;
+   
+}
+.keyword{
+    grid-area: keyword;
+    display: inline-block;
+}
+.time{
+    grid-area: time;
+}
+input{
+    margin-left:5px;
+    margin-right:5px;
+}
 </style>

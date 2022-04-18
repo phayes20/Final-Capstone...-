@@ -1,12 +1,19 @@
 <template>
   <div class="home">
     <!-- <h1>WalkCLE</h1> -->
+    
    <h1 class="header">WalkCLE</h1>
     <!-- <img src="src\img\skyline.jpg" alt="Cleveland Skyline"> -->
     <Nav-Bar />
     <Search />
-    <add-google-map />
-    <location-list />
+      <div class="location-display">
+        <div class="map">
+        <add-google-map />
+        </div>
+        <div class="locations">
+        <location-list />
+        </div>
+      </div>
      <div class= "container">
        
     <div id="background_photo">
@@ -97,6 +104,25 @@ export default {
     gap: 20px; 
     
  } 
+
+ .location-display{
+ display: grid;
+ grid-template-columns: 1.35fr 2fr 2fr;
+ grid-template-areas: 'map location location';
+
+ }
+
+.locations{
+  grid-area: location;
+}
+
+.map{
+  grid-area: map;
+  position: fixed;
+  margin-bottom: 200px ;
+  margin-top: -37px;
+ 
+}
 </style>
 
 

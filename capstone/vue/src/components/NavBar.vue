@@ -36,12 +36,12 @@ export default {
   </script>
 
 
-  <style>
+  <style >
 
    nav ul  {
     list-style: none;
     width: 100%;
-    height: 200px;
+    height: 150px;
    
     border-radius: 1fr;
     text-align: auto; 
@@ -49,7 +49,9 @@ export default {
 
 }
 nav {
-  background-image:url('../img/Location_Images/Cleveland_Sign.png'); 
+  background-image:url('../img/updated skyline.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
  ul li {
