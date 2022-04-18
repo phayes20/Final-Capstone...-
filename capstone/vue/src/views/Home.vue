@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- <h1>WalkCLE</h1> -->
-   <h1>WalkCLE</h1>
+   <h1 class="header">WalkCLE</h1>
     <!-- <img src="src\img\skyline.jpg" alt="Cleveland Skyline"> -->
     <Nav-Bar />
     <Search />
@@ -11,7 +11,7 @@
        
     <div id="background_photo">
      
-      <img alt="background" src="../img/Location_Images/Cleveland_Sign.png">
+      <!-- <img alt="background" src="../img/Location_Images/Cleveland_Sign.png"> -->
 
 
     </div>
@@ -89,9 +89,9 @@ export default {
     /* grid-template-rows: 1fr 1fr 1fr; */
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
     grid-template-areas:
-       "Food Food_Img Sports Sports"
-       "Theater Theater Arts Arts"
-       "Parks Parks Historical Historical"
+       "Food Sports Theater Arts Parks Historical"
+      
+       
        ;
     height: 100px;
     gap: 20px; 
