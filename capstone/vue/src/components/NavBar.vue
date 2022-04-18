@@ -24,6 +24,9 @@ export default {
   name: 'Nav-Bar',
   methods: {
     setFilterCategory(category){
+      this.$store.commit("SET_FILTER_DAY", "");
+      this.$store.commit("SET_FILTER_TIME", "");
+      this.$store.commit("SET_FILTER_KEYWORD", "");
       this.$store.commit("SET_FILTER_CATEGORY", category)
     }
 }

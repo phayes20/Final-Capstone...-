@@ -2,7 +2,8 @@
   <div class="home">
     <!-- <h1>WalkCLE</h1> -->
     
-   <h1 class="header">WalkCLE</h1>
+   <h1 class="header"><img id="logo" src="../img/WalkCle.png" /></h1>
+   
     <!-- <img src="src\img\skyline.jpg" alt="Cleveland Skyline"> -->
     <Nav-Bar />
     <Search />
@@ -122,6 +123,10 @@ export default {
   margin-bottom: 200px ;
   margin-top: -37px;
  
+}
+#logo{
+height: 8%;
+width: 8%;
 }
 </style>
 
