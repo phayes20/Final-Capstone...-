@@ -4,13 +4,13 @@
     <aside>
         <nav>
          
-            <ul>
-                <li id= "Food"> <a v-on:click.prevent="setFilterCategory('food') " href="#">Bars / Food </a></li>
+            <ul class = "categories">
+                <li id= "Food"> <a v-on:click.prevent="setFilterCategory('food') " href="#"> Food </a></li>
                 <li id= "Sports"><a v-on:click.prevent="setFilterCategory('sports')" href="#">Sports</a></li>
-                <li id= "Theater"><a v-on:click.prevent="setFilterCategory('theater')" href="#">PlayHouse District</a></li>
+                <li id= "Theater"><a v-on:click.prevent="setFilterCategory('theater')" href="#">Theater</a></li>
                 <li id= "Arts"><a v-on:click.prevent="setFilterCategory('arts')" href="#">Arts</a></li>
                 <li id= "Parks"><a v-on:click.prevent="setFilterCategory('parks')" href="#">Parks</a></li>
-                <li id= "Historical"><a v-on:click.prevent="setFilterCategory('historical')" href="#">Historical Sites</a></li>
+                <li id= "Historical"><a v-on:click.prevent="setFilterCategory('historical')" href="#">Historical</a></li>
             </ul>
         </nav>
     </aside>
@@ -59,7 +59,7 @@ nav {
     text-align:justify;
     justify-content: space-between;
     align-items: center;
-  
+   
 }
 
 
