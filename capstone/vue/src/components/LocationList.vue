@@ -3,9 +3,10 @@
         <div class="preview"
         v-for="location in filteredList"
         v-bind:key="location.id"
-        v-on:click="viewLocationDetails(location.id)">
+        >
         <h2>   {{ location.name }} </h2>
-        <p>  {{  location.description  }} </p>
+        <p>  {{  location.description  }} <br/>
+        <router-link :to="{ name: 'LocationDetails', params: { locationID: location.id } }"><button> Get more info </button></router-link></p>
         <img :src='require(`../img/Location_Images/${location.name}.png`)'>
         <!-- <img src="../img/Location_Images/{{ location.name }}.png" class="location-image" alt="Location Image" /> -->
 
@@ -143,7 +144,7 @@ p {
     grid-area: description;
     justify-self: center;
     text-align: center;
-    
+   
 }
 img {
     grid-area: image;
@@ -152,4 +153,20 @@ img {
     object-fit: cover;
 }
 
+ .location-list  {
+    /* height:200vh; */
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    justify-items: stretch;
+    /* background-color: gray; */
+    color: black;
+
+
+  }
+
+.preview {
+
+    background-color: gray;
+}
 </style>
