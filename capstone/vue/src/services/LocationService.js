@@ -13,5 +13,8 @@ export default {
     getLocation(locationID){
         return axios.get(`/location/${locationID}`)
     },
+    postCheckIn(checkIn){
+        return axios.post('/location', checkIn)
+    }
    
 }

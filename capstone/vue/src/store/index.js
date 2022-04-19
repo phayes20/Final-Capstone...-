@@ -50,7 +50,12 @@ export default new Vuex.Store({
       latitude: '',
       longitude: '',
 
-    }
+    },
+    checkIn: {
+      userId: '',
+      locationId: '',
+      timeStamp: '',
+      }
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -71,7 +76,6 @@ export default new Vuex.Store({
     },
     SET_LOCATIONS(state, data) {
       state.locations = data;
-
     },
     SET_FILTER_KEYWORD(state, data) {
       state.locationFilter.keyword = data;
