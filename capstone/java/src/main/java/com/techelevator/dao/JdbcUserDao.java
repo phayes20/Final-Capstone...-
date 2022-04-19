@@ -1,10 +1,15 @@
 package com.techelevator.dao;
 
 import java.sql.PreparedStatement;
+
+import java.time.LocalDateTime;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import com.techelevator.model.CheckIn;
 import com.techelevator.model.UserNotFoundException;
+import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -101,6 +106,24 @@ public class JdbcUserDao implements UserDao {
         int newUserId = (int) keyHolder.getKeys().get(id_column);
 
         return userCreated;
+    }
+
+    @Override
+    public void checkIn(CheckIn checkIn){
+         int locationID = checkIn.getLocationId();
+         int userID = checkIn.getUserId();
+         String timeStamp = checkIn.getTimeStamp();
+         String imgUrl = checkIn.getImgUrl();
+
+
+        String insertCheckIn = "insert into user_location (user_id, location_id, time_stamp, image_url) values(?,?,?,?);";
+
+        try {
+            jdbcTemplate.update(insertCheckIn, userID, locationID, timeStamp, imgUrl);
+        } catch (DataAccessException e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 
     private User mapRowToUser(SqlRowSet rs) {

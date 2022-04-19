@@ -22,14 +22,16 @@ public class Location {
     private String saturdayHourOpen;
     private String saturdayHourClosed;
     private String socialMedia;
-    private String categories;
+    private String category;
+    private double latitude;
+    private double longitude;
 
 
     public Location(Long locationId, String name, String description, String sundayHourOpen, String sundayHourClosed,
                     String mondayHourOpen, String mondayHourClosed, String tuesdayHourOpen, String tuesdayHourClosed,
                     String wednesdayHourOpen, String wednesdayHourClosed, String thursdayHourOpen, String thursdayHourClosed,
                     String fridayHourOpen, String fridayHourClosed, String saturdayHourOpen, String saturdayHourClosed,
-                    String socialMedia, String categories) {
+                    String socialMedia, String category, double latitude, double longitude) {
         this.locationId = locationId;
         this.name = name;
         this.description = description;
@@ -48,7 +50,9 @@ public class Location {
         this.saturdayHourOpen = saturdayHourOpen;
         this.saturdayHourClosed = saturdayHourClosed;
         this.socialMedia = socialMedia;
-        this.categories = categories;
+        this.category = category;
+        this.latitude = latitude;
+        this.longitude = longitude;
 
     }
 
@@ -200,11 +204,27 @@ public class Location {
         this.socialMedia = socialMedia;
     }
 
-    public String getCategories() {
-        return categories;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCategories(String categories) {
-        this.categories = categories;
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
