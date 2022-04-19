@@ -17,14 +17,14 @@
       </div>
      <div class= "container">
        
-    <div id="background_photo">
+    <!-- <div id="background_photo">
       <img alt="background" src="../img/skyline.jpg">
     </div>
    
    
     <div id="food_photo">
       <img src="../img/food collage.jpeg">
-    </div>
+    </div> -->
   </div>
 
   </div>
@@ -62,7 +62,7 @@ export default {
 <style scoped>
 
 
-#food_photo {
+/* #food_photo {
   grid-area: Food_Img;
   width: 10px;
   height: 10px;
@@ -74,10 +74,7 @@ export default {
   height: 75px; 
   background-color: blue;
 
-}
-
-
-
+} */
  
 
  .location-display{
@@ -127,6 +124,8 @@ ul {
        ;
     height: 100px;
     gap: 20px;
+}
+
   .header  {
     text-align: center;
     padding-top: 10px;
