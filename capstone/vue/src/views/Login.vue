@@ -1,4 +1,16 @@
 <template>
+<div>
+<div id="Welcome">
+<img src="../img/WalkCle.png" />
+<p>"WalkCLE is a self guided tour of the Cleveland area that encourages users to walk or bike through all of the distinct locations 
+  that make Cleveland such a great place to live!"
+  The numerous sites highlighted inform the user about the area's history, architecture, foods, sports and places of natural beauty. 
+  A fun built-in challenge
+  is to earn badges for visiting each location, and if all of the locations are visited, 
+  you will receive a badge for being a Defender of the Land!"
+</p>
+
+</div>
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
@@ -34,6 +46,7 @@
       <router-link :to="{ name: 'register' }">Need an account?</router-link>
       <button type="submit">Sign in</button>
     </form>
+  </div>
   </div>
 </template>
 
