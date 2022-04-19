@@ -29,17 +29,23 @@
                 <td v-else> {{ location.mondayHourOpen}} to {{ location.mondayHourClosed}}  </td>
             </tr>
             </table>
-        <button> Check In! </button>
-
+        <button v-on:click.prevent="toggleCheckIn"> Check In! </button>
+        <check-in v-show="showCheckIn == true" />
     </div>
 
 </template>
 
 <script>
 import locationService from "@/services/LocationService";
+import CheckIn from './CheckIn.vue';
 
 export default {
-    
+    components: {CheckIn},
+    data(){
+        return{
+            showCheckIn: false
+        }
+    },
     methods: {
     retrieveLocation() {
         locationService.getLocation(this.$route.params.locationID).then(response => {
@@ -57,11 +63,15 @@ export default {
         if (hoursOpen == hoursClosed) {
             return true;
         }
-    }
+    },
+    toggleCheckIn() {
+        this.showCheckIn = !this.showCheckIn;
+    },
     },
     created(){
         this.retrieveLocation();
     },
+    
     computed: {
         location(){
         return this.$store.state.location;

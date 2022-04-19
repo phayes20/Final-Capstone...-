@@ -9,13 +9,15 @@ public class CheckIn {
     private int locationId;
     private int userId;
     private String timeStamp;
+    private String imgUrl;
 
 
 
-    public CheckIn(int locationId, int userId, String timeStamp) {
+    public CheckIn(int locationId, int userId, String timeStamp, String imgUrl) {
         this.locationId = locationId;
         this.userId = userId;
         this.timeStamp = timeStamp;
+        this.imgUrl = imgUrl;
 
     }
 
@@ -43,5 +45,13 @@ public class CheckIn {
 
     public void setTimeStamp(String timeStamp) {
         this.timeStamp = timeStamp;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 }

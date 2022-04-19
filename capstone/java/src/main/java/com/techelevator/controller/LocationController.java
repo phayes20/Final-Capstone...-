@@ -15,15 +15,16 @@ import java.util.List;
 @RequestMapping("/location")
 public class LocationController {
 
-    public LocationController(LocationDao locationDao) {
+    public LocationController(LocationDao locationDao, UserDao userDao) {
         this.locationDao = locationDao;
+        this.userDao = userDao;
     }
 
     private LocationDao locationDao;
 
     private UserDao userDao;
 
-//    @TODO might need to change list to a wrapper class
+
     @RequestMapping(method = RequestMethod.GET)
     public List<Location> locations(){
         return locationDao.getAllLocations();
@@ -51,8 +52,8 @@ public class LocationController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/checkin", method = RequestMethod.POST)
-    public boolean createCheckIn(@RequestBody CheckIn checkIn){
-        return userDao.checkIn(checkIn);
+    public void createCheckIn(@RequestBody CheckIn checkIn){
+        userDao.checkIn(checkIn);
     }
 
 //    @TODO
