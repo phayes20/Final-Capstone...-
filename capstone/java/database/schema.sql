@@ -77,12 +77,12 @@ values ('Cleveland Cultural Gardens', 'The Cleveland Cultural Gardens located al
 
 INSERT INTO locations (name, description, sunday_hour_open, sunday_hour_closed, monday_hour_open, monday_hour_closed, tuesday_hour_open, tuesday_hour_closed,
 wednesday_hour_open, wednesday_hour_closed, thursday_hour_open, thursday_hour_closed, friday_hour_open, friday_hour_closed, saturday_hour_open, saturday_hour_closed,social_media, category, latitude, longitude) 
-values ('Rocket Mortgage Fieldhouse', 'Rocket Mortgage FieldHouse is home to the Cleveland Cavaliers, Cleveland Monsters and is a secondary arena for the Cleveland State Vikings. It was opened in October 1994. The seating capacity is 19,432 for its basketball configuration and for ice hockey seats up to 18,926. 
+values ('Rocket Mortgage Fieldhouse', 'Rocket Mortgage FieldHouse is home to the Cleveland Cavaliers, Cleveland Monsters and is a secondary arena for the Cleveland State Vikings. It was opened in October 1994. The seating capacity is 19.432 for its basketball configuration and for ice hockey seats up to 18,926. 
 ','09:00:00', '17:00:00', '09:00:00', '17:00:00','09:00:00', '17:00:00','09:00:00', '17:00:00','09:00:00', '17:00:00','09:00:00', '17:00:00','09:00:00', '17:00:00', 'www.rocketmortgagefieldhouse.com', 'sports',  '41.4965', '-81.6881');
 
 INSERT INTO locations (name, description, sunday_hour_open, sunday_hour_closed, monday_hour_open, monday_hour_closed, tuesday_hour_open, tuesday_hour_closed,
 wednesday_hour_open, wednesday_hour_closed, thursday_hour_open, thursday_hour_closed, friday_hour_open, friday_hour_closed, saturday_hour_open, saturday_hour_closed,social_media, category, latitude, longitude) 
-values ('Progressive Field', 'Home to the Cleveland Guardians baseball team, it is part of the Gateway Sports and Entertainment Complex. Originally opened as Jacobs Field in 1994 the name was changed in 2008 to Progressive Field. The original seating capacity when it opened in 1995 was 42,865, but as of 2021 after multiple renovations the seating capacity is 34,830. 
+values ('Progressive Field', 'Home to the Cleveland Guardians baseball team, it is part of the Gateway Sports and Entertainment Complex. Originally opened as Jacobs Field in 1994 the name was changed in 2008 to Progressive Field. The original seating capacity when it opened in 1995 was 42,865, but as of 2021 after multiple renovations the seating capacity is 34, 830. 
 
 ', '09:00:00', '17:00:00', '09:00:00', '17:00:00','09:00:00', '17:00:00','09:00:00', '17:00:00','09:00:00', '17:00:00','09:00:00', '17:00:00','09:00:00', '17:00:00', 'www..mlb.com/guardians/ballpark', 'sports',  '41.4962', '-81.6852');
  
@@ -100,7 +100,7 @@ values ('Severance Hall', 'Severance Hall is a concert hall located in the Unive
 
 INSERT INTO locations (name, description, sunday_hour_open, sunday_hour_closed, monday_hour_open, monday_hour_closed, tuesday_hour_open, tuesday_hour_closed,
 wednesday_hour_open, wednesday_hour_closed, thursday_hour_open, thursday_hour_closed, friday_hour_open, friday_hour_closed, saturday_hour_open, saturday_hour_closed,social_media, category, latitude, longitude) 
-values ('Playhouse Square', 'Playhouse Square is Cleveland’s Theatrical Center. It is the largest performing arts center in the country outside of New York. It is home to the Cleveland Playhouse, State Theater, Ohio Theater, Allen Theater and the Hanna Theater, as well as Kennedy’s Cabaret. Playhouse Square opened in 1921 and was a successful vaudeville and silent movie venue. Post-depression era, the theaters fell into decline and disrepair. The theaters were saved by the community with the forming of the Playhouse Square Association which was founded in 1970. Restoration began in July of 1982 to save all the theaters, adding the Hanna Building in 1999. 
+values ('Playhouse Square', 'Playhouse Square is Cleveland’s Theatrical Center. It is the largest performing arts center in the country outside of New York. It is home to the Cleveland Playhouse, State Theater, Ohio Theater, Allen Theater and the Hannah Theater as well as Kennedy’s Cabaret. Playhouse Square opened in 1921 and was a successful vaudeville and silent movie venue. Post-depression era, the theaters fell into decline and disrepair. The theaters were saved by the community with the forming of the Playhouse Square Association which was founded in 1970. Restoration began in July of 1982 to save all the theaters, adding the Hanna Building in 1999. 
 
 ', '09:00:00', '17:00:00', '09:00:00', '17:00:00','09:00:00', '17:00:00','09:00:00', '17:00:00','09:00:00', '17:00:00','09:00:00', '17:00:00','09:00:00', '17:00:00', 'www.playhousesquare.org', 'theater',  '41.4998', '-81.6804');
 
@@ -135,7 +135,7 @@ values ('Lakeview Cemetery', 'Lakeview Cemetery was founded in 1869. It is one o
 
 INSERT INTO locations (name, description, sunday_hour_open, sunday_hour_closed, monday_hour_open, monday_hour_closed, tuesday_hour_open, tuesday_hour_closed,
 wednesday_hour_open, wednesday_hour_closed, thursday_hour_open, thursday_hour_closed, friday_hour_open, friday_hour_closed, saturday_hour_open, saturday_hour_closed,social_media, category, latitude, longitude) 
-values ('West Side Market', 'The West Side Market opened in 1840 and was added to the National Register of Historical Places on December 18, 1973. It is one of the largest indoor/outdoor markets in the City of Cleveland. The center of the Ohio City Community, the market provides fresh meats, seafood and produce as well as multiple culturally diverse vendors. The Neo-Classical/Byzantine building houses nearly 100 stalls of vendors and features a large clock tower, as well as an outdoor open air arcade that surrounds the north and west side of the building.
+values ('West Side Market', 'The West Side Market opened in 1840 and was added to the National Register of Historical Places on December 18, 1973. It is one of the largest indoor/outdoor markets in the City of Cleveland. The center of the Ohio City Community the market provides fresh meats, seafood and produce as well as a multiple of culturally diverse vendors. The Neo-Classical/Byzantine building houses nearly 100 stalls of vendors and features a large clock tower as well as a outdoor open air arcade that surround the north and west side of the building
 ', '00:00:00', '00:00:00', '08:00:00', '17:00:00','00:00:00', '00:00:00','08:00:00', '17:00:00','00:00:00', '00:00:00','08:00:00', '17:00:00','07:00:00', '17:00:00', 'www.ohiocity.org', 'historical',  '41.4847', '-81.7028');
 
 INSERT INTO locations (name, description, sunday_hour_open, sunday_hour_closed, monday_hour_open, monday_hour_closed, tuesday_hour_open, tuesday_hour_closed,
@@ -158,7 +158,7 @@ DROP TABLE IF EXISTS user_location;
 CREATE TABLE user_location (
    	user_id int NOT NULL,
     location_id int NOT NULL,
-	time_stamp timestamp NOT NULL,
+	time_stamp varchar(15) NOT NULL,
 	CONSTRAINT PK_user_location PRIMARY KEY(user_id, location_id),
     CONSTRAINT FK_user_location_user FOREIGN KEY(user_id) REFERENCES users(user_id),
     CONSTRAINT FK_user_location_location FOREIGN KEY(location_id) REFERENCES locations(location_id)
@@ -166,6 +166,22 @@ CREATE TABLE user_location (
 
 COMMIT TRANSACTION;
 
+
+BEGIN TRANSACTION;
+DROP TABLE IF EXISTS user_location;
+
+
+CREATE TABLE user_location (
+   	user_id int NOT NULL,
+    	location_id int NOT NULL,
+	time_stamp varchar(50) NOT NULL,
+	image_url varchar(300) NOT NULL,
+	CONSTRAINT PK_user_location PRIMARY KEY(user_id, location_id),
+    CONSTRAINT FK_user_location_user FOREIGN KEY(user_id) REFERENCES users(user_id),
+    CONSTRAINT FK_user_location_location FOREIGN KEY(location_id) REFERENCES locations(location_id)
+);
+
+COMMIT TRANSACTION;
 
 
 

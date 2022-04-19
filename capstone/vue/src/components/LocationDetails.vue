@@ -8,6 +8,7 @@
         <img :src='require(`../img/Location_Images/${location.name}.png`)'>
         </section>
         
+        
         <table>
             <tr>
                 <td> Monday Hours: </td>
@@ -33,17 +34,24 @@
                 <td v-else> {{ location.sundayHourOpen}} to {{ location.sundayHourClosed}}  </td>
             </tr>
             </table>
-        <button> Check In! </button>
-     </div>
+        <button v-on:click.prevent="toggleCheckIn"> Check In! </button>
+        <check-in v-show="showCheckIn == true" />
+    </div>
     </div>
 
 </template>
 
 <script>
 import locationService from "@/services/LocationService";
+import CheckIn from './CheckIn.vue';
 
 export default {
-    
+    components: {CheckIn},
+    data(){
+        return{
+            showCheckIn: false
+        }
+    },
     methods: {
     retrieveLocation() {
         locationService.getLocation(this.$route.params.locationID).then(response => {
@@ -61,11 +69,15 @@ export default {
         if (hoursOpen == hoursClosed) {
             return true;
         }
-    }
+    },
+    toggleCheckIn() {
+        this.showCheckIn = !this.showCheckIn;
+    },
     },
     created(){
         this.retrieveLocation();
     },
+    
     computed: {
         location(){
         return this.$store.state.location;
@@ -74,7 +86,7 @@ export default {
 }
 </script>
 
- <style> 
+ <style scoped> 
  #blue {
     height: 100vh;
     display: grid;

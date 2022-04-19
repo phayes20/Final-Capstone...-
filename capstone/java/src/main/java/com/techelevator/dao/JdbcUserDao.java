@@ -109,20 +109,21 @@ public class JdbcUserDao implements UserDao {
     }
 
     @Override
-    public boolean checkIn(CheckIn checkIn){
+    public void checkIn(CheckIn checkIn){
          int locationID = checkIn.getLocationId();
          int userID = checkIn.getUserId();
          String timeStamp = checkIn.getTimeStamp();
+         String imgUrl = checkIn.getImgUrl();
 
 
-        String insertCheckIn = "insert into user_location (user_id, location_id, time_stamp) values(?,?,?);";
+        String insertCheckIn = "insert into user_location (user_id, location_id, time_stamp, image_url) values(?,?,?,?);";
 
         try {
-            jdbcTemplate.update(insertCheckIn, userID, locationID, timeStamp);
+            jdbcTemplate.update(insertCheckIn, userID, locationID, timeStamp, imgUrl);
         } catch (DataAccessException e) {
-            return false;
+            System.out.println(e.getMessage());
         }
-        return true;
+
     }
 
     private User mapRowToUser(SqlRowSet rs) {

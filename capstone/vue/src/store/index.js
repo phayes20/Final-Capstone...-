@@ -55,6 +55,7 @@ export default new Vuex.Store({
       userId: '',
       locationId: '',
       timeStamp: '',
+      imgUrl: '',
       }
   },
   mutations: {
