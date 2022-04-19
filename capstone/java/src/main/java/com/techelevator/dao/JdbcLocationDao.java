@@ -38,9 +38,12 @@ public class JdbcLocationDao implements LocationDao {
 
 
     @Override
-    public Location getLocationById(Long locationId) {
+    public Location getLocationById(String locationId) {
         String sql = "SELECT * FROM locations WHERE location_id = ?";
-        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, locationId);
+
+        Long locID = Long.parseLong(locationId);
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, locID);
         if(results.next()) {
             return mapRowToLocations(results);
         }

@@ -6,7 +6,7 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
 import App from '../App.vue'
-import LocationDetails from '../views/LocationDetails.vue'
+import Location from '../views/Location.vue'
 import * as VueGoogleMaps from '/node_modules/vue2-google-maps' // Import package
 Vue.config.productionTip = false;
 Vue.use(VueGoogleMaps, {
@@ -41,7 +41,7 @@ const router = new Router({
       name: 'home',
       component: Home,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -70,8 +70,8 @@ const router = new Router({
     },
     {
       path: "/location/:locationID",
-      name: "LocationDetails",
-      component: LocationDetails
+      name: "Location",
+      component: Location
     }
   ]
 })

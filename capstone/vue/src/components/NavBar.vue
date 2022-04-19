@@ -2,9 +2,9 @@
 
 
     <aside>
-        <nav>
-         
+        <nav>         
             <ul class = "categories">
+                <li id ="logo"><img v-on:click.prevent="setFilterCategory('') " src="../img/WalkCle.png" />  </li>
                 <li id= "Food"> <a v-on:click.prevent="setFilterCategory('food') " href="#"> Food </a></li>
                 <li id= "Sports"><a v-on:click.prevent="setFilterCategory('sports')" href="#">Sports</a></li>
                 <li id= "Theater"><a v-on:click.prevent="setFilterCategory('theater')" href="#">Theater</a></li>
@@ -43,7 +43,7 @@ export default {
 
    nav ul  {
     list-style: none;
-    width: 100%;
+    width: 95%;
     height: 150px;
    
     border-radius: 1fr;
@@ -57,7 +57,12 @@ nav {
   background-image:url('../img/updated skyline.jpg');
   background-size: cover;
   background-position: center;
+  
   align-items: center;
+  display: grid;
+   grid-template-areas:
+       "Logo Food Sports Theater Arts Parks Historical";
+    
 }
 
   
@@ -78,9 +83,33 @@ a {
  .categories {
     font-size: 30px;
     text-align: center;
-    border: red;
+  
 
   }
+img{
+height: 99%;
+width: 99%;
+background-color: black;
+
+
+grid-area: Logo;
+}
+
+#logo {
+  background-color: black;
+  gap:0;
+  margin:0;
+  padding:0;
+  border: black solid;
+}
+ul {
+    display: grid;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    height: 100px;
+    gap: 0px; 
+    
+ } 
 
   </style>
   
