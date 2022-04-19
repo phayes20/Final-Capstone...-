@@ -77,6 +77,9 @@ export default new Vuex.Store({
     SET_LOCATIONS(state, data) {
       state.locations = data;
     },
+    SET_LOCATION(state, data) {
+      state.location = data;
+    },
     SET_FILTER_KEYWORD(state, data) {
       state.locationFilter.keyword = data;
     },

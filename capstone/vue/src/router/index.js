@@ -8,7 +8,7 @@ import store from '../store/index'
 import App from '../App.vue'
 import LocationDetails from '../views/LocationDetails.vue'
 import * as VueGoogleMaps from '/node_modules/vue2-google-maps' // Import package
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 Vue.use(VueGoogleMaps, {
   load: {
     key: "AIzaSyDbSEMb9sXdVaG0YFBblYKHJQT79GjD-2g",
@@ -57,7 +57,7 @@ const router = new Router({
       name: "logout",
       component: Logout,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
     {
