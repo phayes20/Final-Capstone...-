@@ -39,7 +39,7 @@ export default {
   </script>
 
 
-  <style >
+  <style scoped>
 
    nav ul  {
     list-style: none;
@@ -49,24 +49,38 @@ export default {
     border-radius: 1fr;
     text-align: auto; 
     line-height: 30px;
+    vertical-align: center;
+    align-items: center;
 
 }
 nav {
   background-image:url('../img/updated skyline.jpg');
   background-size: cover;
   background-position: center;
+  align-items: center;
 }
 
- ul li {
-    padding: 2px;
-    border: none;
-    font-weight: bold;
-    text-align:justify;
-    justify-content: space-between;
-    align-items: center;
-   
+  
+
+a {
+   padding: 5px;
+   color: black;
+   background-color: rgba(255,255,255,0.50);
+   border: solid gray;
+   text-decoration: none;
+   align-items: center;
+   justify-items: center;
+   text-transform: uppercase;
+   text-emphasis: bold;
 }
 
+
+ .categories {
+    font-size: 30px;
+    text-align: center;
+    border: red;
+
+  }
 
   </style>
   

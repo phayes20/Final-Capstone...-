@@ -2,7 +2,7 @@
   <div class="home">
     <!-- <h1>WalkCLE</h1> -->
     
-   <h1 class="header"><img id="logo" src="../img/WalkCle.png" /></h1>
+   <div class="header"><img id="logo" src="../img/WalkCle.png" /></div>
    
     <!-- <img src="src\img\skyline.jpg" alt="Cleveland Skyline"> -->
     <Nav-Bar />
@@ -128,12 +128,26 @@ export default {
 height: 8%;
 width: 8%;
 }
-</style>
 
 
-// nav ul {background-image:url(skyline.jpg);
-//      background-attachment: fixed;
-//      background-position: center;
-//      background-repeat: no-repeat;background-size: cover;}
- 
+.container {
+    height:100vh;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    justify-items: stretch;
+    /* background-color: gray; */
+    color: black;
+  }    
 
+  .header  {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 70px;
+    background-image: linear-gradient( #696969,  #A9A9A9, #DCDCDC);
+    width: 100%;
+  }
+
+
+
+  </style>

@@ -17,5 +17,5 @@
 
 
 </script>
-<style> @import  "../src/assets/style.css"; </style>
+
 
