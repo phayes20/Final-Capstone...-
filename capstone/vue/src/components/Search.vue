@@ -102,7 +102,7 @@ export default
 .time{
     grid-area: time;
 }
-input{
+form{
     margin-left:5px;
     margin-right:5px;
 }
