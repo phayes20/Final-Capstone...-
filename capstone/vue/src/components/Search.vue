@@ -63,7 +63,7 @@ export default
         this.setFilterCategory("");
         this.$store.commit("SET_FILTER_DAY", this.filter.day);
         this.$store.commit("SET_FILTER_TIME", this.filter.time);
-      this.$store.commit("SET_FILTER_KEYWORD", this.filter.keyword);
+        this.$store.commit("SET_FILTER_KEYWORD", this.filter.keyword);
       
     },
         clearTimeFilter(){
