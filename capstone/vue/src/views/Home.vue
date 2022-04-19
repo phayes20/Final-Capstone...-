@@ -17,19 +17,14 @@
       </div>
      <div class= "container">
        
-    <div id="background_photo">
-     
-      <!-- <img alt="background" src="../img/Location_Images/Cleveland_Sign.png"> -->
-
-
+    <!-- <div id="background_photo">
+      <img alt="background" src="../img/skyline.jpg">
     </div>
    
    
     <div id="food_photo">
-    
-      <!-- <img alt="food" src="../img/food collage.jpeg"> -->
-    
-    </div>
+      <img src="../img/food collage.jpeg">
+    </div> -->
   </div>
 
   </div>
@@ -39,14 +34,19 @@
 
 </template>
 
-<!--relative path similar to line 24 -->
+
+body {background-image:url(“skyline.jpg”);
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;background-size: cover;}
+
+
 
 <script>
 
 import NavBar  from '@/components/NavBar';
 import Search from '@/components/Search';
 import AddGoogleMap from '@/components/AddGoogleMap';
-
 import LocationList from '../components/LocationList.vue';
 
 export default {
@@ -62,9 +62,19 @@ export default {
 <style scoped>
 
 
+/* #food_photo {
+  grid-area: Food_Img;
+  width: 10px;
+  height: 10px;
+}
 
+#Food {
+  grid-area: Food;
+  width: 75px;
+  height: 75px; 
+  background-color: blue;
 
-
+} */
  
 
  .location-display{
@@ -100,6 +110,21 @@ width: 8%;
     /* background-color: gray; */
     color: black;
   }    
+
+ul {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      ""
+      "Food Food_Img Sports Sports"
+      "Theater Theater Arts Arts"
+      "Parks Parks Historical Historical"
+      ""
+       ;
+    height: 100px;
+    gap: 20px;
+}
 
   .header  {
     text-align: center;

@@ -21,17 +21,18 @@
         v-model="user.username"
         required
         autofocus
+        
       />
       <label for="password" class="sr-only">Password</label>
       <input
-        type="password"
+        type="password" 
         id="password"
         class="form-control"
         placeholder="Password"
         v-model="user.password"
         required
       />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
+      <router-link :to="{ name: 'register' }" class="accountSignIn">Need an account?</router-link>
       <button type="submit">Sign in</button>
     </form>
   </div>
@@ -74,3 +75,25 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+
+#login {
+  text-align: center;
+  background-image: linear-gradient(to right, #50967F, #BAFFE8,#8FE4C8, #BAFFE8, #50967F );
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-bottom: 400px;
+}
+
+.sr-only::before {
+    content: "\a";
+    white-space: pre;
+}
+
+.accountSignIn::before {
+  content: "\a";
+  white-space: pre;
+}
+
+</style>
