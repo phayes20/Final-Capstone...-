@@ -1,19 +1,37 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
-    <p>WalkCLE</p>
+    <!-- <h1>WalkCLE</h1> -->
+    
+   <!-- <div class="header"><img id="logo" src="../img/WalkCle.png" /></div> -->
+   
     <!-- <img src="src\img\skyline.jpg" alt="Cleveland Skyline"> -->
     <Nav-Bar />
     <Search />
-    <add-google-map />
-    <location-list />
+      <div class="location-display">
+        <div class="map">
+        <add-google-map />
+        </div>
+        <div class="locations">
+        <location-list />
+        </div>
+      </div>
+     <div class= "container">
+       
     <div id="background_photo">
       <img alt="background" src="../img/skyline.jpg">
     </div>
+   
+   
     <div id="food_photo">
       <img src="../img/food collage.jpeg">
     </div>
   </div>
+
+  </div>
+
+
+
+
 </template>
 
 
@@ -41,7 +59,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
 
 #food_photo {
@@ -58,25 +76,43 @@ export default {
 
 }
 
-#Sports {
-    grid-area: Sports;
-}
 
-#Theater {
-    grid-area: Theater;
-}
 
-#Arts {
-    grid-area: Arts;
-}
- #Parks {
-   grid-area: Parks;
+ 
+
+ .location-display{
+ display: grid;
+ grid-template-columns: 1.35fr 2fr 2fr;
+ grid-template-areas: 'map location location';
+
  }
 
- #Historical {
-   grid-area: Historical;
- }
+.locations{
+  grid-area: location;
+}
 
+.map{
+  grid-area: map;
+  position: fixed;
+  margin-bottom: 200px ;
+  margin-top: -37px;
+ 
+}
+#logo{
+height: 8%;
+width: 8%;
+}
+
+
+.container {
+    height:100vh;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    justify-items: stretch;
+    /* background-color: gray; */
+    color: black;
+  }    
 
 ul {
     display: grid;
@@ -91,7 +127,14 @@ ul {
        ;
     height: 100px;
     gap: 20px;
+  .header  {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 70px;
+    background-image: linear-gradient( #696969,  #A9A9A9, #DCDCDC);
+    width: 100%;
+  }
 
-    
-}
-</style>
+
+
+  </style>

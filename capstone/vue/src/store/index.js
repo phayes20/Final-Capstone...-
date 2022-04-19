@@ -25,6 +25,7 @@ export default new Vuex.Store({
       keyword: '',
       category: '',
       time: '',
+      day: ''
   },
     location: {
       locationId: '',
@@ -45,11 +46,16 @@ export default new Vuex.Store({
       saturdayHourOpen: '',
       saturdayHourClosed: '',
       socialMedia: '',
-      categories: '',
+      category: '',
       latitude: '',
       longitude: '',
 
-    }
+    },
+    checkIn: {
+      userId: '',
+      locationId: '',
+      timeStamp: '',
+      }
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -70,7 +76,9 @@ export default new Vuex.Store({
     },
     SET_LOCATIONS(state, data) {
       state.locations = data;
-
+    },
+    SET_LOCATION(state, data) {
+      state.location = data;
     },
     SET_FILTER_KEYWORD(state, data) {
       state.locationFilter.keyword = data;
@@ -80,6 +88,9 @@ export default new Vuex.Store({
     },
     SET_FILTER_TIME(state, data) {
       state.locationFilter.time = data;
+    },
+    SET_FILTER_DAY(state, data) {
+      state.locationFilter.day = data;
     }
   }
 })

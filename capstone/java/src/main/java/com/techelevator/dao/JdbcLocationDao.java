@@ -38,9 +38,12 @@ public class JdbcLocationDao implements LocationDao {
 
 
     @Override
-    public Location getLocationById(Long locationId) {
+    public Location getLocationById(String locationId) {
         String sql = "SELECT * FROM locations WHERE location_id = ?";
-        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, locationId);
+
+        Long locID = Long.parseLong(locationId);
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, locID);
         if(results.next()) {
             return mapRowToLocations(results);
         }
@@ -126,14 +129,14 @@ public class JdbcLocationDao implements LocationDao {
         String saturdayHourOpen = location.getSaturdayHourOpen();
         String saturdayHourClosed= location.getSaturdayHourClosed();
         String socialMedia = location.getSocialMedia();
-        String categories = location.getCategories();
+        String category = location.getCategory();
         double latitude = location.getLatitude();
         double  longitude = location.getLongitude();
 
         String insertLocation = "insert into locations (categories, description, sunday_hour_open, sunday_hour_closed, monday_hour_open, monday_hour_closed, tuesday_hour_open, tuesday_hour_closed, wednesday_hour_open, wednesday_hour_closed, thursday_hour_open, thursday_hour_closed, friday_hour_open, friday_hour_closed, saturday_hour_open, saturday_hour_closed, social_media, name) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 
         try {
-            jdbcTemplate.update(insertLocation, categories, description, sundayHourOpen, sundayHourClosed, mondayHourOpen, mondayHourClosed, tuesdayHourOpen, tuesdayHourClosed, wednesdayHourOpen, wednesdayHourClosed, thursdayHourOpen, thursdayHourClosed, fridayHourOpen, fridayHourClosed, saturdayHourOpen, saturdayHourClosed, socialMedia, name);
+            jdbcTemplate.update(insertLocation, category, description, sundayHourOpen, sundayHourClosed, mondayHourOpen, mondayHourClosed, tuesdayHourOpen, tuesdayHourClosed, wednesdayHourOpen, wednesdayHourClosed, thursdayHourOpen, thursdayHourClosed, fridayHourOpen, fridayHourClosed, saturdayHourOpen, saturdayHourClosed, socialMedia, name);
         } catch (DataAccessException e) {
             return false;
         }
@@ -145,7 +148,7 @@ public class JdbcLocationDao implements LocationDao {
     private Location mapRowToLocations(SqlRowSet rs) {
         Location location = new Location();
         location.setLocationId(rs.getLong("location_id"));
-        location.setCategories(rs.getString("category"));
+        location.setCategory(rs.getString("category"));
         location.setDescription(rs.getString("description"));
         location.setSundayHourOpen(rs.getString("sunday_hour_open"));
         location.setSundayHourClosed(rs.getString("sunday_hour_closed"));
