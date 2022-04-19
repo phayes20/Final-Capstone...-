@@ -1,7 +1,10 @@
 package com.techelevator.controller;
 
 import com.techelevator.dao.LocationDao;
+import com.techelevator.dao.UserDao;
+import com.techelevator.model.CheckIn;
 import com.techelevator.model.Location;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +20,8 @@ public class LocationController {
     }
 
     private LocationDao locationDao;
+
+    private UserDao userDao;
 
 //    @TODO might need to change list to a wrapper class
     @RequestMapping(method = RequestMethod.GET)
@@ -42,6 +47,12 @@ public class LocationController {
     @RequestMapping(value = "/category/{category}", method = RequestMethod.GET)
     public List<Location> categoryLocations(@PathVariable String category) {
         return locationDao.getLocationByCategory(category);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(value = "/checkin", method = RequestMethod.POST)
+    public boolean createCheckIn(@RequestBody CheckIn checkIn){
+        return userDao.checkIn(checkIn);
     }
 
 //    @TODO
