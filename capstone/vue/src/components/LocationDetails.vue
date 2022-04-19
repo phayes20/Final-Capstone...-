@@ -39,8 +39,7 @@
 import locationService from "@/services/LocationService";
 
 export default {
-
-
+    
     methods: {
     retrieveLocation() {
         locationService.getLocation(this.$route.params.locationID).then(response => {

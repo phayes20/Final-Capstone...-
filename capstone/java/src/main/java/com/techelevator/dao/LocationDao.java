@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface LocationDao {
     List<Location> getAllLocations();
-    Location getLocationById(Long locationId);
+    Location getLocationById(String locationId);
     List<Location> getLocationByKeyword(String keyword);
     List<Location>  getLocationByTime (String time, String Day);
     List<Location>  getLocationByCategory (String category);

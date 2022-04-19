@@ -2,7 +2,7 @@
   <div class="home">
     <!-- <h1>WalkCLE</h1> -->
     
-   <div class="header"><img id="logo" src="../img/WalkCle.png" /></div>
+   <!-- <div class="header"><img id="logo" src="../img/WalkCle.png" /></div> -->
    
     <!-- <img src="src\img\skyline.jpg" alt="Cleveland Skyline"> -->
     <Nav-Bar />
@@ -59,52 +59,13 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
 
 
 
-/* #food_photo {
-  grid-area: Food_Img;
-}
 
-#Food {
-    grid-area: Food;
-}
-
-#Sports {
-    grid-area: Sports;
-}
-
-#Theater {
-    grid-area: Theater;
-}
-
-#Arts {
-    grid-area: Arts;
-}
- #Parks {
-   grid-area: Parks;
- }
-
- #Historical {
-   grid-area: Historical;
- }
- */
-
- ul {
-    display: grid;
-    /* grid-template-rows: 1fr 1fr 1fr; */
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
-    grid-template-areas:
-       "Food Sports Theater Arts Parks Historical"
-      
-       
-       ;
-    height: 100px;
-    gap: 20px; 
-    
- } 
+ 
 
  .location-display{
  display: grid;

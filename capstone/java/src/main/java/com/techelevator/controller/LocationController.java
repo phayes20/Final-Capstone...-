@@ -40,7 +40,7 @@ public class LocationController {
     }
 
     @RequestMapping(value = "/{locationId}", method = RequestMethod.GET)
-    public  Location idLocations(@PathVariable Long locationId) {
+    public  Location idLocations(@PathVariable String locationId) {
         return locationDao.getLocationById(locationId);
     }
 
