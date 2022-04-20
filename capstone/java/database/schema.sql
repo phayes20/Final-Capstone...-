@@ -210,6 +210,16 @@ wednesday_hour_open, wednesday_hour_closed, thursday_hour_open, thursday_hour_cl
 values ('Allen Theater', 'The Allen Theater was opened in April, 1921. It  was designed by architect C. Howard Crane and was originally opened as a movie theater. At the time it was opened it could seat close to 3,000 people. The Allen Theater closed in May of 1968. It has had multiple renovations; the most recent in 2012 transformed the space into the new home of the Cleveland Playhouse and Cleveland State. It also is a collaborative space for the Case Western Reserve Universities MFA Acting Program.
 ', '00:00:00', '00:00:00', '00:00:00', '00:00:00','00:00:00', '00:00:00','00:00:00', '00:00:00','00:00:00', '00:00:00','00:00:00', '00:00:00','00:00:00', '00:00:00', 'www.playhousesquare.org', 'theater',  '41.4998', '-81.6804');
 
+INSERT INTO locations (name, description, sunday_hour_open, sunday_hour_closed, monday_hour_open, monday_hour_closed, tuesday_hour_open, tuesday_hour_closed,
+wednesday_hour_open, wednesday_hour_closed, thursday_hour_open, thursday_hour_closed, friday_hour_open, friday_hour_closed, saturday_hour_open, saturday_hour_closed,social_media, category, latitude, longitude) 
+values ('Rock and Roll Hall of Fame', 'Opened on September 2, 1995 and located on the shore of Lake Erie in downtown Cleveland. The museum was designed by the famed architect I.M. Pei who also designed the Louvre Pyramid in Paris. The Rock Hall celebrates the history of rock music, its artists, producers and notable influencers and features numerous exhibits and events throughout the year. The Rock Hall collection includes memorabilia from John Lennon, Janis Joplin, Michael Jackson and  Elvis to name a few, and is continuously adding to its extensive collection as well as providing multiple enrichment programs to the local communities.
+', '10:00:00', '17:00:00', '10:00:00', '17:00:00','10:00:00', '17:00:00','10:00:00', '17:00:00','10:00:00', '21:00:00','10:00:00', '17:00:00','10:00:00', '17:00:00', 'www.rockhall.com', 'arts',  '41.5085', '-81.6954');
+
+
+
+
+
+
 
 COMMIT TRANSACTION;
 
