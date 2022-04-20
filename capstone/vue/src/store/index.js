@@ -19,7 +19,46 @@ if(currentToken != null) {
 export default new Vuex.Store({
   state: {
     token: currentToken || '',
-    user: currentUser || {}
+    user: currentUser || {},
+    locations: [],
+    checkIns: [],
+    locationImages: [],
+    locationFilter: {
+      keyword: '',
+      category: '',
+      time: '',
+      day: ''
+  },
+    location: {
+      locationId: '',
+      name: '',
+      description: '',
+      sundayHourOpen: '',
+      sundayHourClosed: '',
+      mondayHourOpen: '',
+      mondayHourClosed: '',
+      tuesdayHourOpen: '',
+      tuesdayHourClosed: '',
+      wednesdayHourOpen: '',
+      wednesdayHourClosed: '',
+      thursdayHourOpen: '',
+      thursdayHourClosed: '',
+      fridayHourOpen: '',
+      fridayHourClosed: '',
+      saturdayHourOpen: '',
+      saturdayHourClosed: '',
+      socialMedia: '',
+      category: '',
+      latitude: '',
+      longitude: '',
+
+    },
+    checkIn: {
+      userId: '',
+      locationId: '',
+      timeStamp: '',
+      imgUrl: '',
+      }
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -37,6 +76,30 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
+    },
+    SET_LOCATIONS(state, data) {
+      state.locations = data;
+    },
+    SET_LOCATION(state, data) {
+      state.location = data;
+    },
+    SET_FILTER_KEYWORD(state, data) {
+      state.locationFilter.keyword = data;
+    },
+    SET_FILTER_CATEGORY(state, data) {
+      state.locationFilter.category = data;
+    },
+    SET_FILTER_TIME(state, data) {
+      state.locationFilter.time = data;
+    },
+    SET_FILTER_DAY(state, data) {
+      state.locationFilter.day = data;
+    },
+    SET_LOCATION_IMAGES(state, data) {
+      state.locationImages = data;
+    },
+    SET_CHECKINS(state, data){
+      state.checkIns = data;
     }
   }
 })

@@ -1,4 +1,16 @@
 <template>
+<div>
+<div id="Welcome">
+<img id="loginPhoto" src="../img/WalkCle.png"/>
+<p id="loginText">"WalkCLE is a self guided tour of the Cleveland area that encourages users to walk or bike through all of the distinct locations 
+  that make Cleveland such a great place to live!
+  The numerous sites highlighted inform the user about the area's history, architecture, foods, sports and places of natural beauty. 
+  A fun built-in challenge
+  is to earn badges for visiting each location, and if all of the locations are visited, 
+  you will receive a badge for being a Defender of the Land!"
+</p>
+
+</div>
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
@@ -21,19 +33,21 @@
         v-model="user.username"
         required
         autofocus
+        
       />
       <label for="password" class="sr-only">Password</label>
       <input
-        type="password"
+        type="password" 
         id="password"
         class="form-control"
         placeholder="Password"
         v-model="user.password"
         required
       />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
+      <router-link :to="{ name: 'register' }" class="accountSignIn">Need an account?</router-link>
       <button type="submit">Sign in</button>
     </form>
+  </div>
   </div>
 </template>
 
@@ -74,3 +88,40 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+
+#login {
+  text-align: center;
+  background-image: linear-gradient(to right, #50967F, #BAFFE8,#8FE4C8, #BAFFE8, #50967F );
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-bottom: 400px;
+}
+
+.sr-only::before {
+    content: "\a";
+    white-space: pre;
+}
+
+.accountSignIn::before {
+  content: "\a";
+  white-space: pre;
+}
+
+#loginPhoto{
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 300px;
+}
+
+#loginText {
+  text-align: center;
+  margin-left: 300px;
+  margin-right: 300px;
+  font-size: 22px;
+}
+
+</style>

@@ -5,6 +5,22 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
+import App from '../App.vue'
+import Location from '../views/Location.vue'
+import Profile from '../views/Profile.vue'
+import * as VueGoogleMaps from '/node_modules/vue2-google-maps' // Import package
+Vue.config.productionTip = false;
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: "AIzaSyDbSEMb9sXdVaG0YFBblYKHJQT79GjD-2g",
+    libraries: "places"
+  }
+});
+new Vue({
+  render: h => h(App),
+}).$mount('#app')
+
+
 
 Vue.use(Router)
 
@@ -26,7 +42,7 @@ const router = new Router({
       name: 'home',
       component: Home,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -42,7 +58,7 @@ const router = new Router({
       name: "logout",
       component: Logout,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       }
     },
     {
@@ -53,6 +69,15 @@ const router = new Router({
         requiresAuth: false
       }
     },
+    {
+      path: "/location/:locationID",
+      name: "Location",
+      component: Location
+    },
+    {path: "/profile",
+    name: "Profile",
+    component: Profile
+  }
   ]
 })
 

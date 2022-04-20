@@ -1,10 +1,15 @@
 package com.techelevator.dao;
 
 import java.sql.PreparedStatement;
+
+import java.time.LocalDateTime;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import com.techelevator.model.CheckIn;
 import com.techelevator.model.UserNotFoundException;
+import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -103,6 +108,41 @@ public class JdbcUserDao implements UserDao {
         return userCreated;
     }
 
+    @Override
+    public void checkIn(CheckIn checkIn){
+         int locationID = checkIn.getLocationId();
+         int userID = checkIn.getUserId();
+         String timeStamp = checkIn.getTimeStamp();
+         String imgUrl = checkIn.getImgUrl();
+
+
+        String insertCheckIn = "insert into user_location (user_id, location_id, time_stamp, image_url) values(?,?,?,?);";
+
+        try {
+            jdbcTemplate.update(insertCheckIn, userID, locationID, timeStamp, imgUrl);
+        } catch (DataAccessException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    @Override
+    public List<CheckIn> getCheckInsByUser(long userID) {
+        List<CheckIn> checkIns = new ArrayList<>();
+        String sql = "select * from user_location WHERE user_id = ?";
+        try {
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userID);
+            while (results.next()) {
+                CheckIn checkIn = mapRowToCheckin(results);
+                checkIns.add(checkIn);
+            }
+        } catch (DataAccessException e) {
+            System.out.println(e.getMessage());
+        }
+        return checkIns;
+
+    }
+
     private User mapRowToUser(SqlRowSet rs) {
         User user = new User();
         user.setId(rs.getLong("user_id"));
@@ -111,5 +151,14 @@ public class JdbcUserDao implements UserDao {
         user.setAuthorities(rs.getString("role"));
         user.setActivated(true);
         return user;
+    }
+
+    private CheckIn mapRowToCheckin(SqlRowSet rs) {
+        CheckIn checkIn = new CheckIn();
+        checkIn.setLocationId(rs.getInt("user_id"));
+        checkIn.setLocationId(rs.getInt("location_id"));
+        checkIn.setTimeStamp(rs.getString("time_stamp"));
+        checkIn.setImgUrl(rs.getString("image_url"));
+        return checkIn;
     }
 }
