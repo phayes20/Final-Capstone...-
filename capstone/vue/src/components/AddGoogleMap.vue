@@ -63,6 +63,18 @@ export default {
         this.existingPlace = null;
       }
     },
+
+    methods: {
+
+      dropMarker(position) {
+
+        let marker = new H.map.Marker({ lat: position.Latitude, lng: position.Longitude });
+        this.map.addObject(marker);
+      }
+
+
+    },
+
     locateGeoLocation: function() {
       navigator.geolocation.getCurrentPosition(res => {
         this.center = {
