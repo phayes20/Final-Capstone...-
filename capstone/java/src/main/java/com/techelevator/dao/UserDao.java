@@ -18,4 +18,6 @@ public interface UserDao {
     boolean create(String username, String password, String role);
 
     void checkIn(CheckIn checkIn);
+
+    List<CheckIn> getCheckInsByUser(long userID);
 }

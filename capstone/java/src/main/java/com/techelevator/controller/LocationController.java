@@ -55,6 +55,13 @@ public class LocationController {
     public void createCheckIn(@RequestBody CheckIn checkIn){
         userDao.checkIn(checkIn);
     }
+    @RequestMapping(value = "/userimages/{locationId}", method = RequestMethod.GET)
+    public List<String> locationImages(@PathVariable String locationId){
+        return locationDao.getLocationImages(locationId);
+    }
+
+
+
 
 //    @TODO
 //    @RequestMapping(value = "/create", method = RequestMethod.PUT)

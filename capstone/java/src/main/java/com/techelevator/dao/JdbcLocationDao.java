@@ -91,6 +91,20 @@ public class JdbcLocationDao implements LocationDao {
         return null;
     }
 
+    @Override
+    public List<String> getLocationImages(String locationId) {
+
+        List<String> imageUrls = new ArrayList<>();
+        String sql = "SELECT image_url FROM user_location WHERE location_id = ?";
+
+        Long locID = Long.parseLong(locationId);
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, String.class, locID);
+        while(results.next()) {
+           imageUrls.add(results.getString("image_url"));
+        }
+        return imageUrls;
+    }
 //Commented out to transition to method that takes object instead.
 //    @Override
 //    public boolean createLocation (String name, String description, String sundayHourOpen, String sundayHourClosed,
