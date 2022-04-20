@@ -99,7 +99,7 @@ public class JdbcLocationDao implements LocationDao {
 
         Long locID = Long.parseLong(locationId);
 
-        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, String.class, locID);
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, locID);
         while(results.next()) {
            imageUrls.add(results.getString("image_url"));
         }
