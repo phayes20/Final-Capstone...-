@@ -2,12 +2,11 @@
     <div class = "location-list">
         <div class="preview"
         v-for="location in filteredList"
-        v-bind:key="location.id"
-        
+        v-bind:key="location.locationId"       
         >
         <h2>   {{ location.name }} </h2>
-        <p v-bind:key="location.id" v-on:click="viewLocationDetails(location.id)">  {{  location.description  }} <br/>
-        <router-link :to="{ name: 'Location', params: { locationID: location.id } }" v-bind:key="location.id" ><button> Get more info </button></router-link></p>
+        <p>  {{  location.description  }} <br/>
+        <router-link :to="{ name: 'Location', params: { locationID: location.locationId } }" v-bind:key="location.locationId" ><button> Get more info </button></router-link></p>
         <img :src='require(`../img/Location_Images/${location.name}.png`)'>
         <!-- <img src="../img/Location_Images/{{ location.name }}.png" class="location-image" alt="Location Image" /> -->
 
@@ -168,6 +167,6 @@ img {
 
 .preview {
 
-    background-color: gray;
+    background-color: #5F9EA0;
 }
 </style>

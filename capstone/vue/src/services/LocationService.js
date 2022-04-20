@@ -14,7 +14,7 @@ export default {
         return axios.get(`/location/${locationID}`)
     },
     postCheckIn(checkIn){
-        return axios.post('/location', checkIn)
+        return axios.post('/location/checkin', checkIn)
     }
    
 }

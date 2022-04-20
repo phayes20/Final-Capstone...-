@@ -17,5 +17,5 @@ public interface UserDao {
 
     boolean create(String username, String password, String role);
 
-    boolean checkIn(CheckIn checkIn);
+    void checkIn(CheckIn checkIn);
 }
