@@ -1,8 +1,8 @@
 <template>
 <div>
 <div id="Welcome">
-<img src="../img/WalkCle.png"/>
-<p>"WalkCLE is a self guided tour of the Cleveland area that encourages users to walk or bike through all of the distinct locations 
+<img id="loginPhoto" src="../img/WalkCle.png"/>
+<p id="loginText">"WalkCLE is a self guided tour of the Cleveland area that encourages users to walk or bike through all of the distinct locations 
   that make Cleveland such a great place to live!
   The numerous sites highlighted inform the user about the area's history, architecture, foods, sports and places of natural beauty. 
   A fun built-in challenge
@@ -107,6 +107,21 @@ export default {
 .accountSignIn::before {
   content: "\a";
   white-space: pre;
+}
+
+#loginPhoto{
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 300px;
+}
+
+#loginText {
+  text-align: center;
+  margin-left: 300px;
+  margin-right: 300px;
+  font-size: 22px;
 }
 
 </style>
