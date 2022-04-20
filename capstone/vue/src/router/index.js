@@ -72,11 +72,18 @@ const router = new Router({
     {
       path: "/location/:locationID",
       name: "Location",
-      component: Location
+      component: Location,
+      meta: {
+        requiresAuth: false
+      }
+      
     },
     {path: "/profile",
     name: "Profile",
-    component: Profile
+    component: Profile,
+    meta: {
+      requiresAuth: true
+    }
   }
   ]
 })
