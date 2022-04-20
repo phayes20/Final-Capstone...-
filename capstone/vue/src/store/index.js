@@ -21,6 +21,8 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {},
     locations: [],
+    checkIns: [],
+    locationImages: [],
     locationFilter: {
       keyword: '',
       category: '',
@@ -92,6 +94,12 @@ export default new Vuex.Store({
     },
     SET_FILTER_DAY(state, data) {
       state.locationFilter.day = data;
+    },
+    SET_LOCATION_IMAGES(state, data) {
+      state.locationImages = data;
+    },
+    SET_CHECKINS(state, data){
+      state.checkIns = data;
     }
   }
 })
