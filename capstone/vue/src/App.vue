@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
       <router-link v-bind:to="{ name: 'Profile' }">Profile</router-link>&nbsp;|&nbsp;
-      <router-link v-bind:to="{ name: 'logout' }">Logout</router-link>
+      <router-link v-bind:to="{ name: 'logout' }">Login/Logout</router-link>
       
       
 

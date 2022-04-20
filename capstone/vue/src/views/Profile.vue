@@ -5,7 +5,7 @@
             <div id="checkin" v-for="checkIn in this.$store.state.checkIns" v-bind:key="checkIn.userId">
             
             <p>Check-in Date: {{ checkIn.timeStamp }} at  {{ checkIn.name }} </p>
-              <img :src='`${checkIn.imgUrl}`' >
+              <img :src='`${checkIn.imgUrl}`' />
             </div>
         </div>
 

@@ -1,15 +1,21 @@
 <template>
     <div class = "location-list">
+        
         <div class="preview"
         v-for="location in filteredList"
         v-bind:key="location.locationId"       
         >
+        <vue-flip active-click>
+            <template v-slot:back>
         <h2>   {{ location.name }} </h2>
-        <p>  {{  location.description  }} <br/>
+        <p id="description">  {{  location.description  }} <br/>
         <router-link :to="{ name: 'Location', params: { locationID: location.locationId } }" v-bind:key="location.locationId" ><button> Get more info </button></router-link></p>
+            </template>
+            <template v-slot:front>
         <img :src='require(`../img/Location_Images/${location.name}.png`)'>
-        <!-- <img src="../img/Location_Images/{{ location.name }}.png" class="location-image" alt="Location Image" /> -->
-
+        <h2 id="image-title">   {{ location.name }} </h2>
+            </template>
+        </vue-flip>
     </div>
     </div>
 </template>
@@ -17,22 +23,14 @@
 <script>
 
 import locationService from "@/services/LocationService";
+import VueFlip from 'vue-flip';
 export default {
     
 
     name: 'location-list',
-    // props: ['filteredLocations'],
+    components: { VueFlip},
     locations: [],
     filteredLocations: [],
-    // data(){
-    //     return {
-    //         filter: {
-    //             keyword: '',
-    //             category: '',
-    //             time: '',
-    //         }
-    //     }
-    // },
     computed:{
         filteredList(){
         let filteredLocations = this.$store.state.locations;
@@ -102,7 +100,7 @@ export default {
 
 <style scoped>
 
-.preview {
+/* .preview {
 display:grid;
 grid-template-columns:1fr 2fr;
 grid-template-areas: 
@@ -111,7 +109,7 @@ grid-template-areas:
 justify-content: center;
 align-content: center;
 
-}
+} */
 /* 
 .location-list :nth-child(even) {
 display:grid;
@@ -133,6 +131,15 @@ grid-template-areas:
 
 .preview {
     border:solid black;
+    height: 350px;
+    width: 320px;
+    background-color: #5F9EA0;
+     position: relative;
+    justify-content: center;
+    align-content: center;
+    
+    text-align: center;
+    font-size: .6vw; 
 }
 
 h2 {
@@ -151,22 +158,34 @@ img {
     width: 300px;
     height: 300px;
     object-fit: cover;
+    align-self: center ;
+    justify-self: center;
+    margin-left: 10px;
+   
+    
 }
 
  .location-list  {
     /* height:200vh; */
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr 1fr;
     gap:20px;
     justify-items: stretch;
     /* background-color: gray; */
     color: black;
-
-
   }
+  .image-title {
+     
+      margin:-100px;
+      padding: -100px;
+      
+      bottom: 75px;
+   
+  }
+    #description {
+        font-size: .8vw;
+        padding: 5px;
 
-.preview {
+    }
 
-    background-color: #5F9EA0;
-}
 </style>
