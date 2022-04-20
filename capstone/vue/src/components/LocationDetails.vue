@@ -47,12 +47,18 @@
         <button v-on:click.prevent="toggleCheckIn"> Check In! </button>
         <check-in v-show="showCheckIn == true" />
     </div>
+        <h3 id="checkInPhotos"> Check-In Photos</h3>
+        <div v-for="image in this.$store.state.locationImages" v-bind:key="image.imgUrl">
+            <img :src='`${image.imgUrl}`'>
+        </div>
+    
     </div>
 </template>
 
 <script>
 import locationService from "@/services/LocationService";
 import CheckIn from './CheckIn.vue';
+import imageService from "@/services/ImageService";
 
 export default {
     components: {CheckIn},
@@ -82,17 +88,38 @@ export default {
     toggleCheckIn() {
         this.showCheckIn = !this.showCheckIn;
     },
+
+    retrieveImages() {
+        imageService.getImages(this.$route.params.locationID).then(response => {
+           this.$store.commit("SET_LOCATION_IMAGES", response.data)
+       }).catch(error => {
+          if (error.response && error.response.status === 404) {
+            alert(
+              "Images not available. This may have been deleted or you have entered an invalid ID."
+            );
+            this.$router.push("/");
+          }
+    });
+    },
+    
     },
     created(){
         this.retrieveLocation();
+        this.retrieveImages();
     },
+    
+
     
     computed: {
         location(){
         return this.$store.state.location;
         }
     }
+
+    
 }
+
+
 </script>
 
  <style scoped>
