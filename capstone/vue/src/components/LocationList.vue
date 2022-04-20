@@ -167,6 +167,6 @@ img {
 
 .preview {
 
-    background-color: gray;
+    background-color: #5F9EA0;
 }
 </style>

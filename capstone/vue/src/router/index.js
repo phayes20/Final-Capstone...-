@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import App from '../App.vue'
 import Location from '../views/Location.vue'
+import Profile from '../views/Profile.vue'
 import * as VueGoogleMaps from '/node_modules/vue2-google-maps' // Import package
 Vue.config.productionTip = false;
 Vue.use(VueGoogleMaps, {
@@ -72,7 +73,11 @@ const router = new Router({
       path: "/location/:locationID",
       name: "Location",
       component: Location
-    }
+    },
+    {path: "/profile",
+    name: "Profile",
+    component: Profile
+  }
   ]
 })
 
