@@ -126,6 +126,21 @@ public class JdbcUserDao implements UserDao {
 
     }
 
+    @Override
+    public List<CheckIn> getCheckInsByUser(long userID) {
+        List<CheckIn> checkIns = new ArrayList<>();
+        String sql = "select * from user_location WHERE user_id = ?";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userID);
+        while(results.next()) {
+            CheckIn checkIn = mapRowToCheckin(results);
+            checkIns.add(checkIn);
+        }
+
+        return checkIns;
+
+    }
+
     private User mapRowToUser(SqlRowSet rs) {
         User user = new User();
         user.setId(rs.getLong("user_id"));
@@ -134,5 +149,14 @@ public class JdbcUserDao implements UserDao {
         user.setAuthorities(rs.getString("role"));
         user.setActivated(true);
         return user;
+    }
+
+    private CheckIn mapRowToCheckin(SqlRowSet rs) {
+        CheckIn checkIn = new CheckIn();
+        checkIn.setLocationId(rs.getInt("user_id"));
+        checkIn.setLocationId(rs.getInt("location_id"));
+        checkIn.setTimeStamp(rs.getString("time_stamp"));
+        checkIn.setImgUrl(rs.getString("image_url"));
+        return checkIn;
     }
 }

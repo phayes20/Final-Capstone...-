@@ -15,7 +15,7 @@ public interface LocationDao {
 //    String saturdayHourOpen ,  String saturdayHourClosed , String socialMedia , String categories );
 
     boolean createLocation(Location location);
-
+    List <String> getLocationImages(String locationId);
 
 
 
