@@ -1,9 +1,9 @@
 <template>
 <div>
 <div id="Welcome">
-<img src="../img/WalkCle.png" />
+<img src="../img/WalkCle.png"/>
 <p>"WalkCLE is a self guided tour of the Cleveland area that encourages users to walk or bike through all of the distinct locations 
-  that make Cleveland such a great place to live!"
+  that make Cleveland such a great place to live!
   The numerous sites highlighted inform the user about the area's history, architecture, foods, sports and places of natural beauty. 
   A fun built-in challenge
   is to earn badges for visiting each location, and if all of the locations are visited, 
