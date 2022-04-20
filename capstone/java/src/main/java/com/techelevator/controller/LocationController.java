@@ -55,11 +55,15 @@ public class LocationController {
     public void createCheckIn(@RequestBody CheckIn checkIn){
         userDao.checkIn(checkIn);
     }
+
     @RequestMapping(value = "/userimages/{locationId}", method = RequestMethod.GET)
     public List<String> locationImages(@PathVariable String locationId){
         return locationDao.getLocationImages(locationId);
     }
-
+    @RequestMapping(value = "/user/{userID}", method = RequestMethod.GET)
+    public List<CheckIn> checkins(@PathVariable long userID){
+        return userDao.getCheckInsByUser(userID);
+    }
 
 
 

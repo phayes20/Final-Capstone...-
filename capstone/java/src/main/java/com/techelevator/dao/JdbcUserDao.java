@@ -130,13 +130,15 @@ public class JdbcUserDao implements UserDao {
     public List<CheckIn> getCheckInsByUser(long userID) {
         List<CheckIn> checkIns = new ArrayList<>();
         String sql = "select * from user_location WHERE user_id = ?";
-
-        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userID);
-        while(results.next()) {
-            CheckIn checkIn = mapRowToCheckin(results);
-            checkIns.add(checkIn);
+        try {
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userID);
+            while (results.next()) {
+                CheckIn checkIn = mapRowToCheckin(results);
+                checkIns.add(checkIn);
+            }
+        } catch (DataAccessException e) {
+            System.out.println(e.getMessage());
         }
-
         return checkIns;
 
     }

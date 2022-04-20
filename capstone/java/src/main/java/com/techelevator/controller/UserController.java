@@ -8,9 +8,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @RestController
 @CrossOrigin
-
 @RequestMapping("/user")
 public class UserController {
 
@@ -26,7 +26,7 @@ public class UserController {
 
         private UserDao userDao;
 
-        @RequestMapping(value = "/checkin/{userID}", method = RequestMethod.GET)
+        @RequestMapping(value = "/{userID}", method = RequestMethod.GET)
         public List<CheckIn> checkins(@PathVariable long userID){
             return userDao.getCheckInsByUser(userID);
         }
