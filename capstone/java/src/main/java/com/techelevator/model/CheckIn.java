@@ -10,14 +10,16 @@ public class CheckIn {
     private int userId;
     private String timeStamp;
     private String imgUrl;
+    private String name;
 
 
 
-    public CheckIn(int locationId, int userId, String timeStamp, String imgUrl) {
+    public CheckIn(int locationId, int userId, String timeStamp, String imgUrl, String name) {
         this.locationId = locationId;
         this.userId = userId;
         this.timeStamp = timeStamp;
         this.imgUrl = imgUrl;
+        this.name = name;
 
     }
 
@@ -53,5 +55,13 @@ public class CheckIn {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

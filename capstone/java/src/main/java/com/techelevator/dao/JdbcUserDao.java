@@ -129,7 +129,10 @@ public class JdbcUserDao implements UserDao {
     @Override
     public List<CheckIn> getCheckInsByUser(long userID) {
         List<CheckIn> checkIns = new ArrayList<>();
-        String sql = "select * from user_location WHERE user_id = ?";
+        String sql = "SELECT user_id, user_location.location_id AS location_id, locations.name AS name, time_stamp, image_url\n" +
+                "from user_location\n" +
+                "Join locations on user_location.location_id = locations.location_id\n" +
+                "where user_id = ?";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userID);
             while (results.next()) {
@@ -159,6 +162,7 @@ public class JdbcUserDao implements UserDao {
         checkIn.setLocationId(rs.getInt("location_id"));
         checkIn.setTimeStamp(rs.getString("time_stamp"));
         checkIn.setImgUrl(rs.getString("image_url"));
+        checkIn.setName(rs.getString("name"));
         return checkIn;
     }
 }

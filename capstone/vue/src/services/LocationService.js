@@ -1,8 +1,5 @@
 import axios from 'axios';
 
-// const http = axios.create({
-//     baseURL: "http://localhost:8080"
-// });
 
 
 export default {
@@ -15,6 +12,7 @@ export default {
     },
     postCheckIn(checkIn){
         return axios.post('/location/checkin', checkIn)
-    }
+    },
+    
    
 }
