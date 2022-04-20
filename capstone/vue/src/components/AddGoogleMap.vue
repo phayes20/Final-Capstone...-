@@ -1,31 +1,21 @@
 <template>
-  <div>
-    <div>
-      <!-- <h2>Vue Js Search and Add Marker</h2>
-      <label>
-        <gmap-autocomplete @place_changed="initMarker"></gmap-autocomplete>
-        <button @click="addLocationMarker">Add</button>
-      </label> -->
-      <br/>
- 
-    </div>
-    <br>
-    <iframe width="460" height="440" frameborder="0" style="border:0"
-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBMDfZgTl5P9-Xya4ZmsWL3jYCqnCwjw0o&q=Cleveland,Ohio" allowfullscreen>
-</iframe> 
-    <!-- <gmap-map
-        :zoom="14"    
-        :center="center"
-        style="width:100%;  height: 600px;"
-      >
-      <gmap-marker
-        :key="index"
-        v-for="(m, index) in locationMarkers"
-        :position="m.position"
-        @click="center=m.position"
-      ></gmap-marker>
-    </gmap-map> -->
-  </div>
+<GmapMap
+      :center="initialMapCenter"
+      :zoom="10"
+      :options="{
+        zoomControl: true,
+        mapTypeControl: true,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: true,
+        disableDefaultUi: false,
+        gestureHandling: 'greedy',
+        disableDoubleClickZoom: true
+      }"
+     style="width:100%;  height: 800px;"
+    />
+
 </template>
  
 <script>
@@ -64,17 +54,7 @@ export default {
       }
     },
 
-    methods: {
-
-      dropMarker(position) {
-
-        let marker = new H.map.Marker({ lat: position.Latitude, lng: position.Longitude });
-        this.map.addObject(marker);
-      }
-
-
-    },
-
+    
     locateGeoLocation: function() {
       navigator.geolocation.getCurrentPosition(res => {
         this.center = {
