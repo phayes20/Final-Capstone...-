@@ -106,7 +106,7 @@ export default {
     
     },
     created(){
-        this.retrieveLocation();
+        this.retrieveLocation()
         this.retrieveImages();
     },
     
