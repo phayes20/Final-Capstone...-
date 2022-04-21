@@ -123,5 +123,9 @@ export default {
   margin-right: 300px;
   font-size: 22px;
 }
+div {
+  background-color:#5F9EA0; 
+
+}
 
 </style>

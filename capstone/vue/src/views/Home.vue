@@ -136,7 +136,7 @@ ul {
 
 
 .home {
-font-family: Chalkboard, Arial-black, Helvetica;
+font-family: Georgia, 'Times New Roman', Times, serif;
 background-color: #F0FFF0;
 }
 
