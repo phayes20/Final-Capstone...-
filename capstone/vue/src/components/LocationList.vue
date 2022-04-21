@@ -135,7 +135,7 @@ grid-template-areas:
     width: 320px;
     background-color: #5F9EA0;
     text-align: center;
-    font-size: .8vw; 
+    font-size: .6vw; 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -179,6 +179,7 @@ img {
         margin-left: -50px;
         padding-left:-150px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: .75vw; 
     }
     button {
         margin-top:8px;

@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="login">
 <div id="Welcome">
 <img id="loginPhoto" src="../img/WalkCle.png"/>
 <p id="loginText">"WalkCLE is a self guided tour of the Cleveland area that encourages users to walk or bike through all of the distinct locations 
@@ -44,11 +44,12 @@
         v-model="user.password"
         required
       />
-      <router-link :to="{ name: 'register' }" class="accountSignIn">Need an account?</router-link>
+      <router-link  :to="{ name: 'register' }" class="accountSignIn">Need an account?    </router-link>
       <button type="submit">Sign in</button>
     </form>
   </div>
   </div>
+ 
 </template>
 
 <script>
@@ -94,9 +95,7 @@ export default {
 #login {
   text-align: center;
   background-image: linear-gradient(to right, #50967F, #BAFFE8,#8FE4C8, #BAFFE8, #50967F );
-  margin-left: 300px;
-  margin-right: 300px;
-  margin-bottom: 400px;
+  height: 100vh;
 }
 
 .sr-only::before {
@@ -127,5 +126,14 @@ div {
   background-color:#5F9EA0; 
 
 }
-
+#login {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.accountSignIn{
+  font-weight: bold;
+}
+.form-control{
+margin: 2px;
+padding: 5px;
+}
 </style>
