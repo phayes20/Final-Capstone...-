@@ -47,11 +47,13 @@
         <button v-on:click.prevent="toggleCheckIn"> Check In! </button>
         <check-in v-show="showCheckIn == true" />
     </div>
-        <h3 id="checkInPhotos"> Check-In Photos</h3>
-        <div v-for="image in this.$store.state.locationImages" v-bind:key="image.imgUrl">
-            <img :src='`${image.imgUrl}`'>
-        </div>
     
+        <h3 id="checkInPhotos"> Check-In Photos: </h3><br/>
+        <div id="photo-section">
+        <div v-for="image in this.$store.state.locationImages" v-bind:key="image.imgUrl">
+            <img id="user-photos" :src='`${image}`' />
+        </div>
+    </div>
     </div>
 </template>
 
@@ -142,5 +144,17 @@ export default {
 .Hours {
     font-family: Arial, Helvetica, sans-serif;
      font-size: 1.2em;
+}
+#user-photos{
+max-height:200px;
+width: auto;
+}
+#photo-section{
+    display:flex;
+    flex-wrap: wrap;
+  
+}
+img {
+     margin: 10px;
 }
  </style>
