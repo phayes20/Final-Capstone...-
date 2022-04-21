@@ -14,7 +14,8 @@
         v-model="user.username"
         required
         autofocus
-      />
+      /><br/>
+      <br/>
       <label for="password" class="sr-only">Password</label>
       <input
         type="password"
@@ -23,7 +24,7 @@
         placeholder="Password"
         v-model="user.password"
         required
-      />
+      /><br/>
       <input
         type="password"
         id="confirmPassword"
@@ -31,11 +32,11 @@
         placeholder="Confirm Password"
         v-model="user.confirmPassword"
         required
-      />
-      <router-link :to="{ name: 'login' }">Have an account?</router-link>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">
+      /><br/><button class="btn btn-lg btn-primary btn-block" type="submit">
         Create Account
-      </button>
+      </button><br/><br/><br/>
+      <router-link :to="{ name: 'login' }">Have an account?</router-link>
+      
     </form>
   </div>
 </template>
@@ -90,4 +91,19 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#register {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  height: 100vh;
+  background-color:#5F9EA0;
+  text-align: center;
+}
+#confirmPassword{
+  margin-left:68px;
+}
+button{
+  margin:10px;
+  margin-left: 50px;
+}
+</style>

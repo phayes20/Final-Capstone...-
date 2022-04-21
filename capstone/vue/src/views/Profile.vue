@@ -5,7 +5,7 @@
             
             <div class="badge">
             <img id="first" :class="[first ? earnedClass : unearnedClass]" src = '@/img/badges2/First.png' />
-            <h3>Baby's first steps</h3>
+            <h3>Baby's First Steps</h3>
             <p>Earned after your first check-in!</p>
             </div>
 
@@ -41,14 +41,14 @@
 
             <div class="badge">
             <img id="scenic" :class="[scenic ? earnedClass : unearnedClass]" src = '@/img/badges2/Scenic.png' />
-            <h3>Defender of the Land</h3>
-            <p>Check in at every location!</p>
+            <h3>Scenic/Selfie</h3>
+            <p>Check in at least 3 of the local scenic locations!</p>
             </div>
 
             <div class="badge">
             <img id="food" :class="[food ? earnedClass : unearnedClass]" src = '@/img/badges2/Food.png' />
-            <h3>Defender of the Land</h3>
-            <p>Check in at every location!</p>
+            <h3>Wine and Dine</h3>
+            <p>Check in at at least 3 restaurants in a week!</p>
             </div>
 
             <div class="badge">
@@ -130,7 +130,8 @@ export default {
  },
  created() {
      this.getUserCheckIns();
-      this.badgeCheck();
+      
+      setTimeout(this.badgeCheck(), 1000)
 
  }
  }
