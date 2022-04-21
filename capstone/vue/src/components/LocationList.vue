@@ -5,9 +5,9 @@
         v-for="location in filteredList"
         v-bind:key="location.locationId"       
         >
-        <vue-flip active-click>
+        <vue-flip active-click width="310px" height="320px">>
             <template v-slot:back>
-        <h2>   {{ location.name }} </h2>
+        <h2 id="title">{{ location.name }}</h2>
         <p id="description">  {{  location.description  }} <br/>
         <router-link :to="{ name: 'Location', params: { locationID: location.locationId } }" v-bind:key="location.locationId" ><button> Get more info </button></router-link></p>
             </template>
@@ -134,23 +134,18 @@ grid-template-areas:
     height: 350px;
     width: 320px;
     background-color: #5F9EA0;
-     position: relative;
-    justify-content: center;
-    align-content: center;
-    
     text-align: center;
     font-size: .6vw; 
 }
 
-h2 {
+#title {
     grid-area: name;
-    justify-self: center;
+    margin-left: -50px;
 }
 p {
    
     grid-area: description;
-    justify-self: center;
-    text-align: center;
+   margin-left: -50px;
    
 }
 img {
@@ -160,9 +155,7 @@ img {
     object-fit: cover;
     align-self: center ;
     justify-self: center;
-    margin-left: 10px;
-   
-    
+    margin-left: 10px;  
 }
 
  .location-list  {
@@ -175,17 +168,17 @@ img {
     color: black;
   }
   .image-title {
-     
-      margin:-100px;
-      padding: -100px;
-      
+    
       bottom: 75px;
    
   }
     #description {
         font-size: .8vw;
-        padding: 5px;
-
+        width: 300px;
+        margin-left: -50px;
+        padding-left:-150px;
     }
-
+    button {
+        margin-top:8px;
+    }
 </style>

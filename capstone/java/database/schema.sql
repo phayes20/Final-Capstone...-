@@ -22,7 +22,11 @@ CREATE TABLE users (
 
 INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
-
+INSERT INTO users (username,password_hash,role) VALUES ('donny','$2a$10$k2T04aaHbZbgozHMDM633uUD31avWbXdug52Jd3dRmrpo5HR6cRqC','ROLE_USER');
+INSERT INTO users (username,password_hash,role) VALUES ('patti','$2a$10$k2T04aaHbZbgozHMDM633uUD31avWbXdug52Jd3dRmrpo5HR6cRqC','ROLE_USER');
+INSERT INTO users (username,password_hash,role) VALUES ('kate','$2a$10$k2T04aaHbZbgozHMDM633uUD31avWbXdug52Jd3dRmrpo5HR6cRqC','ROLE_USER');
+INSERT INTO users (username,password_hash,role) VALUES ('payton','$2a$10$k2T04aaHbZbgozHMDM633uUD31avWbXdug52Jd3dRmrpo5HR6cRqC','ROLE_USER');
+INSERT INTO users (username,password_hash,role) VALUES ('sedric','$2a$10$k2T04aaHbZbgozHMDM633uUD31avWbXdug52Jd3dRmrpo5HR6cRqC','ROLE_USER');
 
 COMMIT TRANSACTION;
 
@@ -154,8 +158,7 @@ values ('Cleveland Museum of Natural History', 'The Cleveland Museum of Natural 
 
 INSERT INTO locations (name, description, sunday_hour_open, sunday_hour_closed, monday_hour_open, monday_hour_closed, tuesday_hour_open, tuesday_hour_closed,
 wednesday_hour_open, wednesday_hour_closed, thursday_hour_open, thursday_hour_closed, friday_hour_open, friday_hour_closed, saturday_hour_open, saturday_hour_closed,social_media, category, latitude, longitude) 
-values ('Cleveland Metroparks Zoo', 'The Cleveland Zoo is part of the beautiful metro park system. It opened in 1882 in University Circle near Wade Oval with donated land from Jeptha H. Wade. Mr. Wade donated 73 acres of land to the City of Cleveland. The Zoo moved to its current location in 1907. In 1959 the zoo became managed by the Cleveland Zoological Society. After a few setbacks early on the zoo recovered and continued its expansion. In 1968 the zoo was transferred from the City of Cleveland to the Cleveland Metropolitan Park District and in 1975 came under the management of the Cleveland Metroparks. It is open year round and features several areas of interest including: Australian Adventure, The Northern Trek, African Savanna, The Primate, Cat and Aquatic exhibits. The zoo features one of the largest primate exhibits in North America. The Zoo was founded in 1882 and spans over 183 acres. One popular feature of the Zoo is the RainForest exhibit which opened in 1992. Many educational and outreach programs are offered at the Zoo throughout the year.
-', '11:00:00', '22:00:00', '00:00:00', '00:00:00','00:00:00', '00:00:00','16:00:00', '22:00:00','16:00:00', '22:00:00','11:00:00', '01:00:00','11:00:00', '01:00:00', 'www.clevelandmetroparks.com', 'parks',  '41.4459', '-81.7126');
+values ('Cleveland Metroparks Zoo', 'The Cleveland Zoo is part of the beautiful metro park system. It is open year round and features several areas of interest including: Australian Adventure, The Northern Trek, African Savanna, The Primate, Cat and Aquatic exhibits. The zoo features one of the largest primate exhibits in North America. The Zoo was founded in 1882 and spans over 183 acres. One popular feature of the Zoo is the RainForest exhibit which opened in 1992. Many educational and outreach programs are offered at the Zoo throughout the year.', '11:00:00', '22:00:00', '00:00:00', '00:00:00','00:00:00', '00:00:00','16:00:00', '22:00:00','16:00:00', '22:00:00','11:00:00', '01:00:00','11:00:00', '01:00:00', 'www.clevelandmetroparks.com', 'parks',  '41.4459', '-81.7126');
 
 INSERT INTO locations (name, description, sunday_hour_open, sunday_hour_closed, monday_hour_open, monday_hour_closed, tuesday_hour_open, tuesday_hour_closed,
 wednesday_hour_open, wednesday_hour_closed, thursday_hour_open, thursday_hour_closed, friday_hour_open, friday_hour_closed, saturday_hour_open, saturday_hour_closed,social_media, category, latitude, longitude) 
@@ -253,6 +256,18 @@ CREATE TABLE user_location (
     CONSTRAINT FK_user_location_user FOREIGN KEY(user_id) REFERENCES users(user_id),
     CONSTRAINT FK_user_location_location FOREIGN KEY(location_id) REFERENCES locations(location_id)
 );
+
+INSERT INTO user_location (user_id, location_id, time_stamp, image_url) VALUES ('3','1','04/20/2022', 'https://www.universitycircle.org/files/locations/slider/cmabenefitallpeoplebanners.jpg');
+INSERT INTO user_location (user_id, location_id, time_stamp, image_url) VALUES ('4','1','04/20/2022', 'https://www.architecturalrecord.com/ext/resources/archives/projects/portfolio/2012/10/images/Cleveland-Museum-of-Art-Rafael-Vinoly-Architects-1.jpg');
+INSERT INTO user_location (user_id, location_id, time_stamp, image_url) VALUES ('5','1','04/20/2022', 'https://www.clevelandart.org/sites/default/files/styles/banner/public/banners/2016bldg_B44_StuartPearl_2346.jpg');
+
+INSERT INTO user_location (user_id, location_id, time_stamp, image_url) VALUES ('3','17','04/20/2022', 'https://thebettervacation.com/wp-content/uploads/2021/04/Cleveland-Zoo.jpg');
+INSERT INTO user_location (user_id, location_id, time_stamp, image_url) VALUES ('4','17','04/20/2022', 'https://www.clevelandmetroparks.com/getmedia/70bed0be-d947-4eee-a17d-11fbb8ea948a/DSC_0321-2_1.jpg.ashx?width=1920&height=1108&ext=.jpg');
+INSERT INTO user_location (user_id, location_id, time_stamp, image_url) VALUES ('5','17','04/20/2022', 'https://www.gannett-cdn.com/presto/2021/02/25/NABJ/90845f6f-af55-454e-938f-d569ad39c15a-orang-dome.jpg');
+
+INSERT INTO user_location (user_id, location_id, time_stamp, image_url) VALUES ('3','3','04/20/2022', 'https://cdn.nba.com/manage/2020/10/rocket-mortgage-fieldhouse-rendering-0409.jpg');
+INSERT INTO user_location (user_id, location_id, time_stamp, image_url) VALUES ('4','3','04/20/2022', 'https://www.nba.com/cavaliers/sites/cavaliers/files/rmfh-758x442.jpg');
+INSERT INTO user_location (user_id, location_id, time_stamp, image_url) VALUES ('5','3','04/20/2022', 'https://www.rocketmortgagefieldhouse.com/assets/img/2021-22-Cavs-Seating-b695c97ef8.jpg');
 
 COMMIT TRANSACTION;
 
