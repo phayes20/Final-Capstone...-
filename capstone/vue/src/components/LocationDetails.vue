@@ -126,23 +126,24 @@ export default {
 
  <style scoped>
  #blue {
-    height: 100vh;
+    height: 105vh;
     /* display: grid; */
     grid-template-columns: 1fr 1fr;
     gap:20px;
     align-items: right;
     background-color:#5F9EA0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
  }
  .location-image {
      float: left;
      margin-right: 10px;
  }
  p.location-text {
-     font-family: Arial, Helvetica, sans-serif;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
      font-size: 1.5em;
  }
 .Hours {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
      font-size: 1.2em;
 }
 #user-photos{

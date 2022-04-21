@@ -77,6 +77,7 @@ a {
    justify-items: center;
    text-transform: uppercase;
    text-emphasis: bold;
+   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 

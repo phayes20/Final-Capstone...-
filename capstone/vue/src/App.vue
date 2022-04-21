@@ -20,16 +20,14 @@
 
 </script>
 
-<style>
-.app {
-font-family: Monaco, Arial-black, Helvetica;
-
- 
-
-
-}
-
-
+<style scoped>
 
 
 </style>
+
+
+
+
+
+
+
