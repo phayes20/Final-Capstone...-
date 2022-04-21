@@ -158,4 +158,12 @@ width: auto;
 img {
      margin: 10px;
 }
+
+#text h1, h2 {
+    text-align: center;
+}
+
+
+
+
  </style>
