@@ -185,7 +185,7 @@ values ('Mitchells Homemade Ice Cream', 'Mitchells Ice Cream started with the id
 INSERT INTO locations (name, description, sunday_hour_open, sunday_hour_closed, monday_hour_open, monday_hour_closed, tuesday_hour_open, tuesday_hour_closed,
 wednesday_hour_open, wednesday_hour_closed, thursday_hour_open, thursday_hour_closed, friday_hour_open, friday_hour_closed, saturday_hour_open, saturday_hour_closed,social_media, category, latitude, longitude) 
 values ('Nates Deli', 'Classic deli sandwiches & salads, plus Mediterranean mains, served in humble, compact quarters. Fantastic Mediterranean cuisine from a family restaurant!
-Menu includes: Soup & Salad,Deli Sandwiches,Combo Sandwiches,Middle Eastern Specialties,Desserts. A 2-min walk from the West Side Market.
+Menu includes: Soup & Salad, Deli Sandwiches, Combo Sandwiches, Middle Eastern Specialties, Desserts. A 2-min walk from the West Side Market.
 ', '00:00:00', '00:00:00', '10:00:00', '15:00:00','10:00:00', '15:00:00','10:00:00', '15:00:00','10:00:00', '15:00:00','10:00:00', '15:00:00','10:00:00', '16:00:00', 'http://natesohiocity.com', 'food',  '41.4847', '-81.7028');
 
 

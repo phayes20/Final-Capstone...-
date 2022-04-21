@@ -135,5 +135,9 @@ ul {
   }
 
 
+.home {
+font-family: Chalkboard, Arial-black, Helvetica;
+background-color: #F0FFF0;
+}
 
   </style>
